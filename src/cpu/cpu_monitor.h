@@ -10,5 +10,5 @@ class CpuMonitor {
     // Luu Idle Time va Total time cua lan doc truoc do
     unsigned long long prevIdleTime;
     unsigned long long prevTotalTime;
-}
+};
 #endif // CPU_MONITOR_H
