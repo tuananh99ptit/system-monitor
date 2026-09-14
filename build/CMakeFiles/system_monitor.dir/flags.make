@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/anhtran99hn/system-monitor/../src/cpu
+CXX_INCLUDES = -I/src/cpu
 
 CXX_FLAGS = -std=gnu++17
 
