@@ -129,6 +129,30 @@ system_monitor/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/system_monitor.dir/build.make CMakeFiles/system_monitor.dir/build
 .PHONY : system_monitor/fast
 
+src/cpu/cpu_monitor.o: src/cpu/cpu_monitor.cpp.o
+.PHONY : src/cpu/cpu_monitor.o
+
+# target to build an object file
+src/cpu/cpu_monitor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/system_monitor.dir/build.make CMakeFiles/system_monitor.dir/src/cpu/cpu_monitor.cpp.o
+.PHONY : src/cpu/cpu_monitor.cpp.o
+
+src/cpu/cpu_monitor.i: src/cpu/cpu_monitor.cpp.i
+.PHONY : src/cpu/cpu_monitor.i
+
+# target to preprocess a source file
+src/cpu/cpu_monitor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/system_monitor.dir/build.make CMakeFiles/system_monitor.dir/src/cpu/cpu_monitor.cpp.i
+.PHONY : src/cpu/cpu_monitor.cpp.i
+
+src/cpu/cpu_monitor.s: src/cpu/cpu_monitor.cpp.s
+.PHONY : src/cpu/cpu_monitor.s
+
+# target to generate assembly for a file
+src/cpu/cpu_monitor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/system_monitor.dir/build.make CMakeFiles/system_monitor.dir/src/cpu/cpu_monitor.cpp.s
+.PHONY : src/cpu/cpu_monitor.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -162,6 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... system_monitor"
+	@echo "... src/cpu/cpu_monitor.o"
+	@echo "... src/cpu/cpu_monitor.i"
+	@echo "... src/cpu/cpu_monitor.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

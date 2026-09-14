@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/anhtran99hn/system-monitor/src/cpu/cpu_monitor.cpp" "CMakeFiles/system_monitor.dir/src/cpu/cpu_monitor.cpp.o" "gcc" "CMakeFiles/system_monitor.dir/src/cpu/cpu_monitor.cpp.o.d"
   "/home/anhtran99hn/system-monitor/src/main.cpp" "CMakeFiles/system_monitor.dir/src/main.cpp.o" "gcc" "CMakeFiles/system_monitor.dir/src/main.cpp.o.d"
   )
 

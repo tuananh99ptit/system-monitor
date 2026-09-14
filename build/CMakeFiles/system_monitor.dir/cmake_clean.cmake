@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/system_monitor.dir/src/cpu/cpu_monitor.cpp.o"
+  "CMakeFiles/system_monitor.dir/src/cpu/cpu_monitor.cpp.o.d"
   "CMakeFiles/system_monitor.dir/src/main.cpp.o"
   "CMakeFiles/system_monitor.dir/src/main.cpp.o.d"
   "system_monitor"
