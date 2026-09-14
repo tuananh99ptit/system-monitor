@@ -6,6 +6,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 include_directories(../src/cpu)
 add_executable(
     system_monitor
-    ..src/main.cpp
-    ..src/cpu/cpu_monitor.cpp
+    src/main.cpp
+    src/cpu/cpu_monitor.cpp
 )
