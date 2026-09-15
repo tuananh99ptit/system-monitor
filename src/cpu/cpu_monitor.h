@@ -2,12 +2,12 @@
 #define CPU_MONITOR_H
 class CpuMonitor {
     public:
-    // Constructor khoi tao moc thoi gian ban dau bang 0
+    // Constructor initializes the initial timestamp to 0
     CpuMonitor();
-    // tinh toan tra ve % CPU dang dang su dung
+    // calculate and return the % CPU currently in use
     float GetCpuUsage();
     private:
-    // Luu Idle Time va Total time cua lan doc truoc do
+    // Store the Idle Time and Total Time from the previous reading
     unsigned long long prevIdleTime;
     unsigned long long prevTotalTime;
 };
