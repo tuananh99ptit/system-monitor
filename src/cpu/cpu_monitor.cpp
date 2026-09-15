@@ -55,19 +55,25 @@ float CpuMonitor::GetCpuUsage() {
 int main() {
     CpuMonitor monitor;
 
-    // 1. Đọc lần 1 để tạo mốc thời gian T1 ban đầu
-    monitor.GetCpuUsage();
+    // Chuẩn bị mốc thời gian ban đầu trước khi vào vòng lặp
+    monitor.GetCpuUsage(); 
 
-    // 2. Chờ 500ms để hệ thống tích lũy chênh lệch thời gian
-    std::this_thread::sleep_for(std::chrono::milliseconds(500));
+    while (true) {
+        // 1. Chờ 500ms để hệ thống tích lũy chênh lệch thời gian
+        std::this_thread::sleep_for(std::chrono::milliseconds(500));
 
-    // 3. Đọc lần 2 để tính % CPU thực tế (T2 - T1)
-    float cpu = monitor.GetCpuUsage();
+        // 2. Tính % CPU thực tế dựa trên chênh lệch với lần đọc trước
+        float cpu = monitor.GetCpuUsage();
 
-    // 4. In kết quả theo đúng định dạng khung ASCII
-    std::cout << "+----------------------+" << std::endl;
-    std::cout << "| CPU Usage : " << std::setw(3) << static_cast<int>(cpu) << "%      |" << std::endl;
-    std::cout << "+----------------------+" << std::endl;
+        // 3. Xóa màn hình và đưa con trỏ về góc trên cùng
+        std::cout << "\033[2J\033[1;1H";
+
+        // 4. In kết quả 
+        std::cout << "=== LINUX SYSTEM MONITOR ===" << std::endl;
+        std::cout << "+----------------------+\n";
+        std::cout << "| CPU Usage : " << std::setw(3) << static_cast<int>(cpu) << "%       |\n";
+        std::cout << "+----------------------+\n";
+    }
 
     return 0;
 }
