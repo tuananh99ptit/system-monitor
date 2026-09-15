@@ -66,10 +66,6 @@ MemoryInfo MemoryMonitor::GetMemoryInfo()
 
     return info;
 }
-#include "memory/memory_monitor.h"
-#include <iostream>
-#include <iomanip>
-
 // Hàm tiện ích: chuyển đổi từ KB sang GB để hiển thị
 double KbToGb(long kb)
 {
@@ -79,7 +75,7 @@ double KbToGb(long kb)
 int main()
 {
     MemoryMonitor monitor;
-
+    while(true) {
     // Lấy thông tin bộ nhớ hiện tại của hệ thống
     MemoryInfo info = monitor.GetMemoryInfo();
 
@@ -89,6 +85,6 @@ int main()
     std::cout << "| Used Memory  : " << KbToGb(info.used) << " GB\n";
     std::cout << "| Free Memory  : " << KbToGb(info.free) << " GB\n";
     std::cout << "+-----------------------------+\n";
-
+    }
     return 0;
 }
