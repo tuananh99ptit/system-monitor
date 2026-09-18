@@ -3,6 +3,8 @@
 #include <sstream>
 #include <iostream>
 #include <iomanip>
+#include <thread>
+#include <chrono>
 long MemoryMonitor::GetValueByLabel(const std::string &content, const std::string &label){
     // Find position of target label (e.g. "MemTotal:") in file content
     size_t pos = content.find(label);
@@ -63,13 +65,13 @@ int main(){
     while(true) {
         // Fetch current system memory information
         auto info = monitor.GetMemoryInfo();
-
-        std::cout << std::fixed << std::setprecision(2);
+        std::cout << std::fixed << std::setprecision(3);
         std::cout << "+-----------------------------+\n";
         std::cout << "| Total Memory : " << KbToGb(info.total) << " GB\n";
         std::cout << "| Used Memory  : " << KbToGb(info.used) << " GB\n";
         std::cout << "| Free Memory  : " << KbToGb(info.free) << " GB\n";
         std::cout << "+-----------------------------+\n";
+        std::this_thread::sleep_for(std::chrono::milliseconds(500));
     }
     return 0;
 }
