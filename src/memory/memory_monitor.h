@@ -16,4 +16,6 @@ class MemoryMonitor {
     // Example: GetValueByLabel(content, "MemTotal")
     long GetValueByLabel(const std::string &content, const std::string &label);
 };
+// Utility function: convert KB to GB for display
+double KbToGb(long kb);
 #endif // MEMORY_MONITOR_H
