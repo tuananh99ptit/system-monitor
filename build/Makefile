@@ -153,7 +153,6 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/system_monitor.dir/build.make CMakeFiles/system_monitor.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-<<<<<<< HEAD
 src/memory/memory_monitor.o: src/memory/memory_monitor.cpp.o
 .PHONY : src/memory/memory_monitor.o
 
@@ -178,8 +177,6 @@ src/memory/memory_monitor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/system_monitor.dir/build.make CMakeFiles/system_monitor.dir/src/memory/memory_monitor.cpp.s
 .PHONY : src/memory/memory_monitor.cpp.s
 
-=======
->>>>>>> origin/main
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -192,12 +189,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-<<<<<<< HEAD
 	@echo "... src/memory/memory_monitor.o"
 	@echo "... src/memory/memory_monitor.i"
 	@echo "... src/memory/memory_monitor.s"
-=======
->>>>>>> origin/main
 .PHONY : help
 
 
