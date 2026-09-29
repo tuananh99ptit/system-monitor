@@ -19,4 +19,5 @@ class DiskMonitor{
     // Monitored mount point path, default is "/" - root partition
     std::string path_ = "/";
 };
+double BytesToGb(unsigned long long bytes);
 #endif // DISK_MONITOR_H

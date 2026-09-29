@@ -6,5 +6,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 include_directories(/src/disk)
 add_executable (
     system_monitor
+    src/main.cpp
     src/disk/disk_monitor.cpp
 )
