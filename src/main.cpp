@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include "memory/memory_monitor.h"
 #include <iostream>
 #include <iomanip>
@@ -17,5 +18,11 @@ int main(){
         std::cout << "+-----------------------------+\n";
         std::this_thread::sleep_for(std::chrono::milliseconds(500));
     }
+=======
+#include <iostream>
+
+int main() {
+    std::cout << "=== Linux System Monitor Initialized ===" << std::endl;
+>>>>>>> origin/main
     return 0;
 }
