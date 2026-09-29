@@ -4,7 +4,11 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
+<<<<<<< HEAD
 CXX_INCLUDES = -I/src/disk
+=======
+CXX_INCLUDES = 
+>>>>>>> origin/main
 
 CXX_FLAGS = -std=gnu++17
 

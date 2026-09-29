@@ -129,6 +129,7 @@ system_monitor/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/system_monitor.dir/build.make CMakeFiles/system_monitor.dir/build
 .PHONY : system_monitor/fast
 
+<<<<<<< HEAD
 src/disk/disk_monitor.o: src/disk/disk_monitor.cpp.o
 .PHONY : src/disk/disk_monitor.o
 
@@ -153,6 +154,8 @@ src/disk/disk_monitor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/system_monitor.dir/build.make CMakeFiles/system_monitor.dir/src/disk/disk_monitor.cpp.s
 .PHONY : src/disk/disk_monitor.cpp.s
 
+=======
+>>>>>>> origin/main
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -186,9 +189,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... system_monitor"
+<<<<<<< HEAD
 	@echo "... src/disk/disk_monitor.o"
 	@echo "... src/disk/disk_monitor.i"
 	@echo "... src/disk/disk_monitor.s"
+=======
+>>>>>>> origin/main
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
