@@ -153,6 +153,33 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/system_monitor.dir/build.make CMakeFiles/system_monitor.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+<<<<<<< HEAD
+src/process/process_monitor.o: src/process/process_monitor.cpp.o
+.PHONY : src/process/process_monitor.o
+
+# target to build an object file
+src/process/process_monitor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/system_monitor.dir/build.make CMakeFiles/system_monitor.dir/src/process/process_monitor.cpp.o
+.PHONY : src/process/process_monitor.cpp.o
+
+src/process/process_monitor.i: src/process/process_monitor.cpp.i
+.PHONY : src/process/process_monitor.i
+
+# target to preprocess a source file
+src/process/process_monitor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/system_monitor.dir/build.make CMakeFiles/system_monitor.dir/src/process/process_monitor.cpp.i
+.PHONY : src/process/process_monitor.cpp.i
+
+src/process/process_monitor.s: src/process/process_monitor.cpp.s
+.PHONY : src/process/process_monitor.s
+
+# target to generate assembly for a file
+src/process/process_monitor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/system_monitor.dir/build.make CMakeFiles/system_monitor.dir/src/process/process_monitor.cpp.s
+.PHONY : src/process/process_monitor.cpp.s
+
+=======
+>>>>>>> main
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -165,6 +192,12 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+<<<<<<< HEAD
+	@echo "... src/process/process_monitor.o"
+	@echo "... src/process/process_monitor.i"
+	@echo "... src/process/process_monitor.s"
+=======
+>>>>>>> main
 .PHONY : help
 
 
