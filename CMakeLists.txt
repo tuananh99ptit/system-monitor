@@ -11,9 +11,4 @@ add_executable(
     src/main.cpp
     src/cpu/cpu_monitor.cpp
 )
-include_directories(/src/process)
-add_executable (
-    system_monitor
-    src/main.cpp
-    src/process/process_monitor.cpp
-)
+
