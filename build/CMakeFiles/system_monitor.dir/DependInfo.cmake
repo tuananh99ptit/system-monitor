@@ -10,9 +10,13 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/anhtran99hn/system-monitor/src/main.cpp" "CMakeFiles/system_monitor.dir/src/main.cpp.o" "gcc" "CMakeFiles/system_monitor.dir/src/main.cpp.o.d"
 <<<<<<< HEAD
+  "/home/anhtran99hn/system-monitor/src/memory/memory_monitor.cpp" "CMakeFiles/system_monitor.dir/src/memory/memory_monitor.cpp.o" "gcc" "CMakeFiles/system_monitor.dir/src/memory/memory_monitor.cpp.o.d"
+=======
+<<<<<<< HEAD
   "/home/anhtran99hn/system-monitor/src/process/process_monitor.cpp" "CMakeFiles/system_monitor.dir/src/process/process_monitor.cpp.o" "gcc" "CMakeFiles/system_monitor.dir/src/process/process_monitor.cpp.o.d"
 =======
 >>>>>>> main
+>>>>>>> origin/main
   )
 
 # Targets to which this target links which contain Fortran sources.
