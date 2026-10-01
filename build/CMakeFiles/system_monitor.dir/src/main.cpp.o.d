@@ -151,6 +151,10 @@ CMakeFiles/system_monitor.dir/src/main.cpp.o: \
  /usr/include/c++/13/bits/locale_facets.tcc \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/main
  /usr/include/c++/13/bits/istream.tcc /usr/include/c++/13/iomanip \
  /usr/include/c++/13/locale \
  /usr/include/c++/13/bits/locale_facets_nonio.h /usr/include/c++/13/ctime \
@@ -160,7 +164,22 @@ CMakeFiles/system_monitor.dir/src/main.cpp.o: \
  /usr/include/c++/13/bits/locale_facets_nonio.tcc \
  /usr/include/c++/13/bits/locale_conv.h \
  /usr/include/c++/13/bits/quoted_string.h /usr/include/c++/13/sstream \
+<<<<<<< HEAD
  /usr/include/c++/13/bits/sstream.tcc /usr/include/c++/13/thread \
+=======
+ /usr/include/c++/13/bits/sstream.tcc /usr/include/c++/13/vector \
+ /usr/include/c++/13/bits/stl_uninitialized.h \
+ /usr/include/c++/13/bits/stl_vector.h \
+ /usr/include/c++/13/bits/stl_bvector.h \
+ /usr/include/c++/13/bits/vector.tcc /usr/include/c++/13/algorithm \
+ /usr/include/c++/13/bits/stl_algo.h \
+ /usr/include/c++/13/bits/algorithmfwd.h \
+ /usr/include/c++/13/bits/stl_heap.h \
+ /usr/include/c++/13/bits/uniform_int_dist.h \
+ /usr/include/c++/13/bits/stl_tempbuf.h \
+ /usr/include/c++/13/pstl/glue_algorithm_defs.h \
+ /usr/include/c++/13/pstl/execution_defs.h /usr/include/c++/13/thread \
+>>>>>>> origin/main
  /usr/include/c++/13/bits/std_thread.h \
  /usr/include/c++/13/bits/unique_ptr.h \
  /usr/include/c++/13/bits/this_thread_sleep.h \
@@ -170,4 +189,12 @@ CMakeFiles/system_monitor.dir/src/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
  /usr/include/c++/13/limits /usr/include/c++/13/bits/parse_numbers.h \
+<<<<<<< HEAD
  /usr/include/c++/13/chrono
+=======
+ /usr/include/c++/13/chrono \
+ /home/anhtran99hn/system-monitor/src/process/process_monitor.h
+=======
+ /usr/include/c++/13/bits/istream.tcc
+>>>>>>> main
+>>>>>>> origin/main

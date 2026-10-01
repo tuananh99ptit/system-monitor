@@ -4,7 +4,15 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
+<<<<<<< HEAD
 CXX_INCLUDES = -I/src/memory
+=======
+<<<<<<< HEAD
+CXX_INCLUDES = -I/src/process
+=======
+CXX_INCLUDES = 
+>>>>>>> main
+>>>>>>> origin/main
 
 CXX_FLAGS = -std=gnu++17
 
