@@ -148,6 +148,7 @@ CMakeFiles/system_monitor.dir/src/main.cpp.o: \
  /usr/include/c++/13/bits/locale_facets.tcc \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
+<<<<<<< HEAD
  /usr/include/c++/13/bits/istream.tcc /usr/include/c++/13/iomanip \
  /usr/include/c++/13/locale \
  /usr/include/c++/13/bits/locale_facets_nonio.h /usr/include/c++/13/ctime \
@@ -180,3 +181,6 @@ CMakeFiles/system_monitor.dir/src/main.cpp.o: \
  /usr/include/c++/13/limits /usr/include/c++/13/bits/parse_numbers.h \
  /usr/include/c++/13/chrono \
  /home/anhtran99hn/system-monitor/src/process/process_monitor.h
+=======
+ /usr/include/c++/13/bits/istream.tcc
+>>>>>>> main
