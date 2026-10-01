@@ -6,6 +6,16 @@ file(REMOVE_RECURSE
 >>>>>>> origin/main
   "CMakeFiles/system_monitor.dir/src/main.cpp.o"
   "CMakeFiles/system_monitor.dir/src/main.cpp.o.d"
+<<<<<<< HEAD
+  "CMakeFiles/system_monitor.dir/src/memory/memory_monitor.cpp.o"
+  "CMakeFiles/system_monitor.dir/src/memory/memory_monitor.cpp.o.d"
+=======
+<<<<<<< HEAD
+  "CMakeFiles/system_monitor.dir/src/process/process_monitor.cpp.o"
+  "CMakeFiles/system_monitor.dir/src/process/process_monitor.cpp.o.d"
+=======
+>>>>>>> main
+>>>>>>> origin/main
   "system_monitor"
   "system_monitor.pdb"
 )

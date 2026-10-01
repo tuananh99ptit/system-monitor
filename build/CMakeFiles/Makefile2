@@ -84,7 +84,15 @@ CMakeFiles/system_monitor.dir/all:
 <<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/anhtran99hn/system-monitor/build/CMakeFiles --progress-num=1,2,3 "Built target system_monitor"
 =======
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/anhtran99hn/system-monitor/build/CMakeFiles --progress-num=1,2 "Built target system_monitor"
+=======
+<<<<<<< HEAD
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/anhtran99hn/system-monitor/build/CMakeFiles --progress-num=1,2,3 "Built target system_monitor"
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/anhtran99hn/system-monitor/build/CMakeFiles --progress-num=1,2 "Built target system_monitor"
+>>>>>>> main
+>>>>>>> origin/main
 >>>>>>> origin/main
 .PHONY : CMakeFiles/system_monitor.dir/all
 
@@ -93,7 +101,15 @@ CMakeFiles/system_monitor.dir/rule: cmake_check_build_system
 <<<<<<< HEAD
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/anhtran99hn/system-monitor/build/CMakeFiles 3
 =======
+<<<<<<< HEAD
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/anhtran99hn/system-monitor/build/CMakeFiles 2
+=======
+<<<<<<< HEAD
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/anhtran99hn/system-monitor/build/CMakeFiles 3
+=======
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/anhtran99hn/system-monitor/build/CMakeFiles 2
+>>>>>>> main
+>>>>>>> origin/main
 >>>>>>> origin/main
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/system_monitor.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/anhtran99hn/system-monitor/build/CMakeFiles 0

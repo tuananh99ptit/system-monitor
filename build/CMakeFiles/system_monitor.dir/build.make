@@ -84,6 +84,7 @@ CMakeFiles/system_monitor.dir/src/main.cpp.s: cmake_force
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/anhtran99hn/system-monitor/src/main.cpp -o CMakeFiles/system_monitor.dir/src/main.cpp.s
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 CMakeFiles/system_monitor.dir/src/disk/disk_monitor.cpp.o: CMakeFiles/system_monitor.dir/flags.make
 CMakeFiles/system_monitor.dir/src/disk/disk_monitor.cpp.o: /home/anhtran99hn/system-monitor/src/disk/disk_monitor.cpp
 CMakeFiles/system_monitor.dir/src/disk/disk_monitor.cpp.o: CMakeFiles/system_monitor.dir/compiler_depend.ts
@@ -97,15 +98,58 @@ CMakeFiles/system_monitor.dir/src/disk/disk_monitor.cpp.i: cmake_force
 CMakeFiles/system_monitor.dir/src/disk/disk_monitor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/system_monitor.dir/src/disk/disk_monitor.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/anhtran99hn/system-monitor/src/disk/disk_monitor.cpp -o CMakeFiles/system_monitor.dir/src/disk/disk_monitor.cpp.s
+=======
+CMakeFiles/system_monitor.dir/src/memory/memory_monitor.cpp.o: CMakeFiles/system_monitor.dir/flags.make
+CMakeFiles/system_monitor.dir/src/memory/memory_monitor.cpp.o: /home/anhtran99hn/system-monitor/src/memory/memory_monitor.cpp
+CMakeFiles/system_monitor.dir/src/memory/memory_monitor.cpp.o: CMakeFiles/system_monitor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/anhtran99hn/system-monitor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/system_monitor.dir/src/memory/memory_monitor.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/system_monitor.dir/src/memory/memory_monitor.cpp.o -MF CMakeFiles/system_monitor.dir/src/memory/memory_monitor.cpp.o.d -o CMakeFiles/system_monitor.dir/src/memory/memory_monitor.cpp.o -c /home/anhtran99hn/system-monitor/src/memory/memory_monitor.cpp
+
+CMakeFiles/system_monitor.dir/src/memory/memory_monitor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/system_monitor.dir/src/memory/memory_monitor.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/anhtran99hn/system-monitor/src/memory/memory_monitor.cpp > CMakeFiles/system_monitor.dir/src/memory/memory_monitor.cpp.i
+
+CMakeFiles/system_monitor.dir/src/memory/memory_monitor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/system_monitor.dir/src/memory/memory_monitor.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/anhtran99hn/system-monitor/src/memory/memory_monitor.cpp -o CMakeFiles/system_monitor.dir/src/memory/memory_monitor.cpp.s
+>>>>>>> origin/main
 
 # Object files for target system_monitor
 system_monitor_OBJECTS = \
 "CMakeFiles/system_monitor.dir/src/main.cpp.o" \
+<<<<<<< HEAD
 "CMakeFiles/system_monitor.dir/src/disk/disk_monitor.cpp.o"
+=======
+"CMakeFiles/system_monitor.dir/src/memory/memory_monitor.cpp.o"
+=======
+<<<<<<< HEAD
+CMakeFiles/system_monitor.dir/src/process/process_monitor.cpp.o: CMakeFiles/system_monitor.dir/flags.make
+CMakeFiles/system_monitor.dir/src/process/process_monitor.cpp.o: /home/anhtran99hn/system-monitor/src/process/process_monitor.cpp
+CMakeFiles/system_monitor.dir/src/process/process_monitor.cpp.o: CMakeFiles/system_monitor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/anhtran99hn/system-monitor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/system_monitor.dir/src/process/process_monitor.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/system_monitor.dir/src/process/process_monitor.cpp.o -MF CMakeFiles/system_monitor.dir/src/process/process_monitor.cpp.o.d -o CMakeFiles/system_monitor.dir/src/process/process_monitor.cpp.o -c /home/anhtran99hn/system-monitor/src/process/process_monitor.cpp
+
+CMakeFiles/system_monitor.dir/src/process/process_monitor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/system_monitor.dir/src/process/process_monitor.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/anhtran99hn/system-monitor/src/process/process_monitor.cpp > CMakeFiles/system_monitor.dir/src/process/process_monitor.cpp.i
+
+CMakeFiles/system_monitor.dir/src/process/process_monitor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/system_monitor.dir/src/process/process_monitor.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/anhtran99hn/system-monitor/src/process/process_monitor.cpp -o CMakeFiles/system_monitor.dir/src/process/process_monitor.cpp.s
+
+# Object files for target system_monitor
+system_monitor_OBJECTS = \
+"CMakeFiles/system_monitor.dir/src/main.cpp.o" \
+"CMakeFiles/system_monitor.dir/src/process/process_monitor.cpp.o"
+>>>>>>> origin/main
 =======
 # Object files for target system_monitor
 system_monitor_OBJECTS = \
 "CMakeFiles/system_monitor.dir/src/main.cpp.o"
+<<<<<<< HEAD
+=======
+>>>>>>> main
+>>>>>>> origin/main
 >>>>>>> origin/main
 
 # External object files for target system_monitor
@@ -113,7 +157,17 @@ system_monitor_EXTERNAL_OBJECTS =
 
 system_monitor: CMakeFiles/system_monitor.dir/src/main.cpp.o
 <<<<<<< HEAD
+<<<<<<< HEAD
 system_monitor: CMakeFiles/system_monitor.dir/src/disk/disk_monitor.cpp.o
+=======
+system_monitor: CMakeFiles/system_monitor.dir/src/memory/memory_monitor.cpp.o
+system_monitor: CMakeFiles/system_monitor.dir/build.make
+system_monitor: CMakeFiles/system_monitor.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/anhtran99hn/system-monitor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable system_monitor"
+=======
+<<<<<<< HEAD
+system_monitor: CMakeFiles/system_monitor.dir/src/process/process_monitor.cpp.o
+>>>>>>> origin/main
 system_monitor: CMakeFiles/system_monitor.dir/build.make
 system_monitor: CMakeFiles/system_monitor.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/anhtran99hn/system-monitor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable system_monitor"
@@ -121,6 +175,10 @@ system_monitor: CMakeFiles/system_monitor.dir/link.txt
 system_monitor: CMakeFiles/system_monitor.dir/build.make
 system_monitor: CMakeFiles/system_monitor.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/anhtran99hn/system-monitor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable system_monitor"
+<<<<<<< HEAD
+=======
+>>>>>>> main
+>>>>>>> origin/main
 >>>>>>> origin/main
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/system_monitor.dir/link.txt --verbose=$(VERBOSE)
 
