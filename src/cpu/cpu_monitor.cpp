@@ -2,10 +2,6 @@
 #include <fstream>
 #include <sstream>
 #include <string>
-#include <iostream>
-#include <iomanip>
-#include <thread>
-#include <chrono>
 // constructor: initializes all initial timestamps to zero
 CpuMonitor::CpuMonitor() {
     prevIdleTime = 0;
@@ -50,30 +46,4 @@ float CpuMonitor::GetCpuUsage() {
     // Apply the formula: % CPU = (1 - ΔIdle / ΔTotal) * 100
     double usageRatio = 1.0 - static_cast<double>(idleDiff) / totalDiff;
     return static_cast<float>(usageRatio * 100.0);
-}
-int main() {
-    CpuMonitor monitor;
-
-    // Prepare the initial timestamp before entering the loop
-    monitor.GetCpuUsage(); 
-
-    while (true) {
-        // Wait 500ms to let the system accumulate the time difference
-
-        std::this_thread::sleep_for(std::chrono::milliseconds(500));
-
-        //Calculate the actual CPU % based on the difference from the previous reading
-        float cpu = monitor.GetCpuUsage();
-
-        // Clear the screen and move the cursor to the top-left corner
-        std::cout << "\033[2J\033[1;1H";
-
-        // 4. In kết quả 
-        std::cout << "=== LINUX SYSTEM MONITOR ===" << std::endl;
-        std::cout << "+----------------------+\n";
-        std::cout << "| CPU Usage : " << std::setw(3) << static_cast<int>(cpu) << "%       |\n";
-        std::cout << "+----------------------+\n";
-    }
-
-    return 0;
 }

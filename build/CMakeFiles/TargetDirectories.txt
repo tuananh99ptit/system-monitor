@@ -1,3 +1,0 @@
-/home/anhtran99hn/system-monitor/build/CMakeFiles/system_monitor.dir
-/home/anhtran99hn/system-monitor/build/CMakeFiles/edit_cache.dir
-/home/anhtran99hn/system-monitor/build/CMakeFiles/rebuild_cache.dir
