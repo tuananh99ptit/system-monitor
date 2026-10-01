@@ -45,12 +45,19 @@ events:
     directories:
 <<<<<<< HEAD
 <<<<<<< HEAD
+      source: "/home/anhtran99hn/system-monitor/build/CMakeFiles/CMakeScratch/TryCompile-HdiPjq"
+      binary: "/home/anhtran99hn/system-monitor/build/CMakeFiles/CMakeScratch/TryCompile-HdiPjq"
+=======
+<<<<<<< HEAD
       source: "/home/anhtran99hn/system-monitor/build/CMakeFiles/CMakeScratch/TryCompile-jKBcp7"
       binary: "/home/anhtran99hn/system-monitor/build/CMakeFiles/CMakeScratch/TryCompile-jKBcp7"
+>>>>>>> origin/main
 =======
       source: "/home/anhtran99hn/system-monitor/build/CMakeFiles/CMakeScratch/TryCompile-fZRjja"
       binary: "/home/anhtran99hn/system-monitor/build/CMakeFiles/CMakeScratch/TryCompile-fZRjja"
 >>>>>>> origin/main
+<<<<<<< HEAD
+=======
 =======
       source: "/home/anhtran99hn/system-monitor/build/CMakeFiles/CMakeScratch/TryCompile-zPwk1f"
       binary: "/home/anhtran99hn/system-monitor/build/CMakeFiles/CMakeScratch/TryCompile-zPwk1f"
@@ -58,6 +65,7 @@ events:
       source: "/home/anhtran99hn/system-monitor/build/CMakeFiles/CMakeScratch/TryCompile-fZRjja"
       binary: "/home/anhtran99hn/system-monitor/build/CMakeFiles/CMakeScratch/TryCompile-fZRjja"
 >>>>>>> main
+>>>>>>> origin/main
 >>>>>>> origin/main
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
@@ -68,6 +76,15 @@ events:
       cached: true
       stdout: |
 <<<<<<< HEAD
+<<<<<<< HEAD
+        Change Dir: '/home/anhtran99hn/system-monitor/build/CMakeFiles/CMakeScratch/TryCompile-HdiPjq'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_8f48f/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_8f48f.dir/build.make CMakeFiles/cmTC_8f48f.dir/build
+        gmake[1]: Entering directory '/home/anhtran99hn/system-monitor/build/CMakeFiles/CMakeScratch/TryCompile-HdiPjq'
+        Building CXX object CMakeFiles/cmTC_8f48f.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -v -o CMakeFiles/cmTC_8f48f.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
+=======
 <<<<<<< HEAD
         Change Dir: '/home/anhtran99hn/system-monitor/build/CMakeFiles/CMakeScratch/TryCompile-jKBcp7'
         
@@ -85,6 +102,7 @@ events:
         Building CXX object CMakeFiles/cmTC_9ad16.dir/CMakeCXXCompilerABI.cpp.o
         /usr/bin/c++   -v -o CMakeFiles/cmTC_9ad16.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
 >>>>>>> origin/main
+>>>>>>> origin/main
 =======
         Change Dir: '/home/anhtran99hn/system-monitor/build/CMakeFiles/CMakeScratch/TryCompile-fZRjja'
         
@@ -94,9 +112,12 @@ events:
         Building CXX object CMakeFiles/cmTC_f1a00.dir/CMakeCXXCompilerABI.cpp.o
         /usr/bin/c++   -v -o CMakeFiles/cmTC_f1a00.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 >>>>>>> origin/main
 =======
 >>>>>>> main
+>>>>>>> origin/main
 >>>>>>> origin/main
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
@@ -109,12 +130,19 @@ events:
         gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04.1) 
 <<<<<<< HEAD
 <<<<<<< HEAD
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8f48f.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8f48f.dir/'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_8f48f.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccpCNZsI.s
+=======
+<<<<<<< HEAD
         COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e5a2a.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_e5a2a.dir/'
          /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_e5a2a.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccyu8Nd7.s
+>>>>>>> origin/main
 =======
         COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f1a00.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_f1a00.dir/'
          /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_f1a00.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cc6Akhnw.s
 >>>>>>> origin/main
+<<<<<<< HEAD
+=======
 =======
         COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_9ad16.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_9ad16.dir/'
          /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_9ad16.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccEsC7Cr.s
@@ -122,6 +150,7 @@ events:
         COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f1a00.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_f1a00.dir/'
          /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_f1a00.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cc6Akhnw.s
 >>>>>>> main
+>>>>>>> origin/main
 >>>>>>> origin/main
         GNU C++17 (Ubuntu 13.3.0-6ubuntu2~24.04.1) version 13.3.0 (x86_64-linux-gnu)
         	compiled by GNU C version 13.3.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.26-GMP
@@ -145,6 +174,17 @@ events:
         Compiler executable checksum: 7896445e4990772fdae9dc0659a99266
 <<<<<<< HEAD
 <<<<<<< HEAD
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8f48f.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8f48f.dir/'
+         as -v --64 -o CMakeFiles/cmTC_8f48f.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccpCNZsI.s
+        GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8f48f.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8f48f.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_8f48f
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8f48f.dir/link.txt --verbose=1
+        /usr/bin/c++  -v CMakeFiles/cmTC_8f48f.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_8f48f 
+=======
+<<<<<<< HEAD
         COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e5a2a.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_e5a2a.dir/'
          as -v --64 -o CMakeFiles/cmTC_e5a2a.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccyu8Nd7.s
         GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42
@@ -165,6 +205,7 @@ events:
         /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9ad16.dir/link.txt --verbose=1
         /usr/bin/c++  -v CMakeFiles/cmTC_9ad16.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_9ad16 
 >>>>>>> origin/main
+>>>>>>> origin/main
 =======
         COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f1a00.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_f1a00.dir/'
          as -v --64 -o CMakeFiles/cmTC_f1a00.dir/CMakeCXXCompilerABI.cpp.o /tmp/cc6Akhnw.s
@@ -176,9 +217,12 @@ events:
         /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f1a00.dir/link.txt --verbose=1
         /usr/bin/c++  -v CMakeFiles/cmTC_f1a00.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_f1a00 
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 >>>>>>> origin/main
 =======
 >>>>>>> main
+>>>>>>> origin/main
 >>>>>>> origin/main
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
@@ -194,6 +238,12 @@ events:
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
 <<<<<<< HEAD
 <<<<<<< HEAD
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8f48f' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_8f48f.'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/cc690bg0.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_8f48f /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_8f48f.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8f48f' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_8f48f.'
+        gmake[1]: Leaving directory '/home/anhtran99hn/system-monitor/build/CMakeFiles/CMakeScratch/TryCompile-HdiPjq'
+=======
+<<<<<<< HEAD
         COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e5a2a' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_e5a2a.'
          /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccWjPkHC.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_e5a2a /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_e5a2a.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
         COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e5a2a' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_e5a2a.'
@@ -204,15 +254,19 @@ events:
         COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_9ad16' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_9ad16.'
         gmake[1]: Leaving directory '/home/anhtran99hn/system-monitor/build/CMakeFiles/CMakeScratch/TryCompile-zPwk1f'
 >>>>>>> origin/main
+>>>>>>> origin/main
 =======
         COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f1a00' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_f1a00.'
          /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccfHvlnl.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_f1a00 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_f1a00.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
         COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f1a00' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_f1a00.'
         gmake[1]: Leaving directory '/home/anhtran99hn/system-monitor/build/CMakeFiles/CMakeScratch/TryCompile-fZRjja'
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 >>>>>>> origin/main
 =======
 >>>>>>> main
+>>>>>>> origin/main
 >>>>>>> origin/main
         
       exitCode: 0
@@ -255,6 +309,15 @@ events:
         link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
 <<<<<<< HEAD
 <<<<<<< HEAD
+        ignore line: [Change Dir: '/home/anhtran99hn/system-monitor/build/CMakeFiles/CMakeScratch/TryCompile-HdiPjq']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_8f48f/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_8f48f.dir/build.make CMakeFiles/cmTC_8f48f.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/anhtran99hn/system-monitor/build/CMakeFiles/CMakeScratch/TryCompile-HdiPjq']
+        ignore line: [Building CXX object CMakeFiles/cmTC_8f48f.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_8f48f.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
+=======
+<<<<<<< HEAD
         ignore line: [Change Dir: '/home/anhtran99hn/system-monitor/build/CMakeFiles/CMakeScratch/TryCompile-jKBcp7']
         ignore line: []
         ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_e5a2a/fast]
@@ -271,6 +334,7 @@ events:
         ignore line: [Building CXX object CMakeFiles/cmTC_9ad16.dir/CMakeCXXCompilerABI.cpp.o]
         ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_9ad16.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
 >>>>>>> origin/main
+>>>>>>> origin/main
 =======
         ignore line: [Change Dir: '/home/anhtran99hn/system-monitor/build/CMakeFiles/CMakeScratch/TryCompile-fZRjja']
         ignore line: []
@@ -280,9 +344,12 @@ events:
         ignore line: [Building CXX object CMakeFiles/cmTC_f1a00.dir/CMakeCXXCompilerABI.cpp.o]
         ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_f1a00.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 >>>>>>> origin/main
 =======
 >>>>>>> main
+>>>>>>> origin/main
 >>>>>>> origin/main
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
@@ -295,12 +362,19 @@ events:
         ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04.1) ]
 <<<<<<< HEAD
 <<<<<<< HEAD
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8f48f.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8f48f.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_8f48f.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccpCNZsI.s]
+=======
+<<<<<<< HEAD
         ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e5a2a.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_e5a2a.dir/']
         ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_e5a2a.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccyu8Nd7.s]
+>>>>>>> origin/main
 =======
         ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f1a00.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_f1a00.dir/']
         ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_f1a00.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cc6Akhnw.s]
 >>>>>>> origin/main
+<<<<<<< HEAD
+=======
 =======
         ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_9ad16.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_9ad16.dir/']
         ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_9ad16.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccEsC7Cr.s]
@@ -308,6 +382,7 @@ events:
         ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f1a00.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_f1a00.dir/']
         ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_f1a00.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cc6Akhnw.s]
 >>>>>>> main
+>>>>>>> origin/main
 >>>>>>> origin/main
         ignore line: [GNU C++17 (Ubuntu 13.3.0-6ubuntu2~24.04.1) version 13.3.0 (x86_64-linux-gnu)]
         ignore line: [	compiled by GNU C version 13.3.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.26-GMP]
@@ -331,6 +406,17 @@ events:
         ignore line: [Compiler executable checksum: 7896445e4990772fdae9dc0659a99266]
 <<<<<<< HEAD
 <<<<<<< HEAD
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8f48f.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8f48f.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_8f48f.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccpCNZsI.s]
+        ignore line: [GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8f48f.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8f48f.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_8f48f]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8f48f.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/c++  -v CMakeFiles/cmTC_8f48f.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_8f48f ]
+=======
+<<<<<<< HEAD
         ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e5a2a.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_e5a2a.dir/']
         ignore line: [ as -v --64 -o CMakeFiles/cmTC_e5a2a.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccyu8Nd7.s]
         ignore line: [GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42]
@@ -351,6 +437,7 @@ events:
         ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9ad16.dir/link.txt --verbose=1]
         ignore line: [/usr/bin/c++  -v CMakeFiles/cmTC_9ad16.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_9ad16 ]
 >>>>>>> origin/main
+>>>>>>> origin/main
 =======
         ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f1a00.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_f1a00.dir/']
         ignore line: [ as -v --64 -o CMakeFiles/cmTC_f1a00.dir/CMakeCXXCompilerABI.cpp.o /tmp/cc6Akhnw.s]
@@ -362,9 +449,12 @@ events:
         ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f1a00.dir/link.txt --verbose=1]
         ignore line: [/usr/bin/c++  -v CMakeFiles/cmTC_f1a00.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_f1a00 ]
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 >>>>>>> origin/main
 =======
 >>>>>>> main
+>>>>>>> origin/main
 >>>>>>> origin/main
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
@@ -380,12 +470,19 @@ events:
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
 <<<<<<< HEAD
 <<<<<<< HEAD
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8f48f' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_8f48f.']
+        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/cc690bg0.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_8f48f /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_8f48f.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+=======
+<<<<<<< HEAD
         ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e5a2a' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_e5a2a.']
         link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccWjPkHC.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_e5a2a /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_e5a2a.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+>>>>>>> origin/main
 =======
         ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f1a00' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_f1a00.']
         link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccfHvlnl.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_f1a00 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_f1a00.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
 >>>>>>> origin/main
+<<<<<<< HEAD
+=======
 =======
         ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_9ad16' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_9ad16.']
         link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/cciQXV6t.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_9ad16 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_9ad16.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
@@ -394,11 +491,18 @@ events:
         link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccfHvlnl.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_f1a00 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_f1a00.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
 >>>>>>> main
 >>>>>>> origin/main
+>>>>>>> origin/main
           arg [/usr/libexec/gcc/x86_64-linux-gnu/13/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper] ==> ignore
 <<<<<<< HEAD
+<<<<<<< HEAD
+          arg [-plugin-opt=-fresolution=/tmp/cc690bg0.res] ==> ignore
+=======
+          arg [-plugin-opt=-fresolution=/tmp/ccfHvlnl.res] ==> ignore
+>>>>>>> origin/main
+=======
 <<<<<<< HEAD
           arg [-plugin-opt=-fresolution=/tmp/ccWjPkHC.res] ==> ignore
 =======
@@ -409,6 +513,7 @@ events:
 =======
           arg [-plugin-opt=-fresolution=/tmp/ccfHvlnl.res] ==> ignore
 >>>>>>> main
+>>>>>>> origin/main
 >>>>>>> origin/main
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
@@ -429,6 +534,12 @@ events:
           arg [-o] ==> ignore
 <<<<<<< HEAD
 <<<<<<< HEAD
+          arg [cmTC_8f48f] ==> ignore
+=======
+          arg [cmTC_f1a00] ==> ignore
+>>>>>>> origin/main
+=======
+<<<<<<< HEAD
           arg [cmTC_e5a2a] ==> ignore
 =======
           arg [cmTC_f1a00] ==> ignore
@@ -438,6 +549,7 @@ events:
 =======
           arg [cmTC_f1a00] ==> ignore
 >>>>>>> main
+>>>>>>> origin/main
 >>>>>>> origin/main
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o]
@@ -451,6 +563,12 @@ events:
           arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
           arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../..]
 <<<<<<< HEAD
+<<<<<<< HEAD
+          arg [CMakeFiles/cmTC_8f48f.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+=======
+          arg [CMakeFiles/cmTC_f1a00.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+>>>>>>> origin/main
+=======
 <<<<<<< HEAD
           arg [CMakeFiles/cmTC_e5a2a.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
 =======
@@ -737,6 +855,7 @@ events:
 =======
           arg [CMakeFiles/cmTC_f1a00.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
 >>>>>>> main
+>>>>>>> origin/main
 >>>>>>> origin/main
           arg [-lstdc++] ==> lib [stdc++]
           arg [-lm] ==> lib [m]

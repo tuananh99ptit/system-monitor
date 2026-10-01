@@ -1,4 +1,9 @@
 file(REMOVE_RECURSE
+<<<<<<< HEAD
+  "CMakeFiles/system_monitor.dir/src/disk/disk_monitor.cpp.o"
+  "CMakeFiles/system_monitor.dir/src/disk/disk_monitor.cpp.o.d"
+=======
+>>>>>>> origin/main
   "CMakeFiles/system_monitor.dir/src/main.cpp.o"
   "CMakeFiles/system_monitor.dir/src/main.cpp.o.d"
 <<<<<<< HEAD

@@ -1,4 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+/usr/bin/c++ CMakeFiles/system_monitor.dir/src/main.cpp.o CMakeFiles/system_monitor.dir/src/disk/disk_monitor.cpp.o -o system_monitor 
+=======
+/usr/bin/c++ CMakeFiles/system_monitor.dir/src/main.cpp.o -o system_monitor 
+=======
 /usr/bin/c++ CMakeFiles/system_monitor.dir/src/main.cpp.o CMakeFiles/system_monitor.dir/src/memory/memory_monitor.cpp.o -o system_monitor 
 =======
 <<<<<<< HEAD
@@ -6,4 +11,5 @@
 =======
 /usr/bin/c++ CMakeFiles/system_monitor.dir/src/main.cpp.o -o system_monitor 
 >>>>>>> main
+>>>>>>> origin/main
 >>>>>>> origin/main

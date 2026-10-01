@@ -5,6 +5,11 @@
 CXX_DEFINES = 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+CXX_INCLUDES = -I/src/disk
+=======
+CXX_INCLUDES = 
+=======
 CXX_INCLUDES = -I/src/memory
 =======
 <<<<<<< HEAD
@@ -12,6 +17,7 @@ CXX_INCLUDES = -I/src/process
 =======
 CXX_INCLUDES = 
 >>>>>>> main
+>>>>>>> origin/main
 >>>>>>> origin/main
 
 CXX_FLAGS = -std=gnu++17
