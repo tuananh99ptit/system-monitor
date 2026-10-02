@@ -31,3 +31,6 @@ add_library(
 # 3. Create main executable and link to the created monitor library
 add_executable(system_monitor src/main.cpp)
 target_link_libraries(system_monitor PRIVATE monitor)
+# Target chạy Unit Test riêng biệt
+add_executable(test_common tests/test_common.cpp)
+target_link_libraries(test_common PRIVATE monitor)
