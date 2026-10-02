@@ -7,7 +7,7 @@
 #include <chrono>
 #include <sstream>
 
-// 1. Hàm kiểm tra và ghi log CPU
+// 1. function check and write log cpu
 void CheckAndLogCPU(CpuMonitor& cpuMon) {
     double cpuPercent = cpuMon.GetCpuUsage();
     std::ostringstream ss;
@@ -20,12 +20,12 @@ void CheckAndLogCPU(CpuMonitor& cpuMon) {
     }
 }
 
-// 2. Hàm kiểm tra và ghi log Memory
+// 2. function check and write log Memory
 void CheckAndLogMemory(MemoryMonitor& memMon) {
     auto memInfo = memMon.GetMemoryInfo();
     double memPercent = 0.0;
     if (memInfo.total > 0) {
-        memPercent = (memInfo.used / memInfo.total) * 100.0;
+        memPercent = (static_cast<double>(memInfo.used) / (memInfo.total)) * 100.0;
     }
 
     std::ostringstream ss;
@@ -38,18 +38,18 @@ void CheckAndLogMemory(MemoryMonitor& memMon) {
     }
 }
 
-// 3. Hàm kiểm tra và ghi log Disk
+// 3. function check and write log Disk
 void CheckAndLogDisk(DiskMonitor& diskMon) {
     auto diskInfo = diskMon.GetDiskInfo();
     double diskPercent = 0.0;
     if (diskInfo.total > 0) {
-        diskPercent = (diskInfo.used / diskInfo.total) * 100.0;
+        diskPercent = (static_cast<double>(diskInfo.used) / (diskInfo.total)) * 100.0;
     }
 
     std::ostringstream ss;
     ss << "DISK=" << static_cast<int>(diskPercent) << "%";
 
-    if (diskPercent >= 90.0) { // Ngưỡng Disk >= 90% sẽ ghi WARN
+    if (diskPercent >= 90.0) { // Disk >= 90% -> WARN
         Logger::Warn(ss.str());
     } else {
         Logger::Info(ss.str());
@@ -66,8 +66,7 @@ int main() {
         CheckAndLogMemory(memMon);
         CheckAndLogDisk(diskMon);
 
-        // Nghỉ 1 giây (1000ms) trước khi sang chu kỳ quét tiếp theo
-        std::this_thread::sleep_for(std::chrono::milliseconds(Config::DEFAULT_REFRESH_INTERVAL_MS));
+        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
     }
     return 0;
 }

@@ -34,7 +34,7 @@ int main() {
     std::cout << "Running Common Module Unit Tests..." << std::endl;
     TestUtils();
     TestFileReader();
-    Logger::Info("All unit tests passed!");
+    std::cout << "[SUCCESS] All unit tests passed!" << std::endl;
     std::cout << "ALL TESTS PASSED!" << std::endl;
     return 0;
 }
