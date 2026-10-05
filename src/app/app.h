@@ -1,7 +1,7 @@
 #ifndef APP_H
 #define APP_H
 
-#include "cpu/cpu_monitor.h"
+#include "cpu_monitor.h"
 
 class App {
 public:
@@ -10,7 +10,7 @@ public:
     void Run();
 
 private:
-    CpuMonitor CpuMonitor_;
+    CpuMonitor cpuMonitor_;
     // Dedicated function responsible for displaying the console interface
     void Display(float cpuUsage);
 };
