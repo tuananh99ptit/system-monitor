@@ -10,14 +10,15 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_library(
     monitor STATIC
     src/cpu/cpu_monitor.cpp
+    src/app/app.cpp
 )
 
 # Declare header directories directly associated with the 'monitor' target
 target_include_directories(
     monitor PUBLIC
     src/cpu
+    src/app
 )
-
 # ==============================================================================
 # 2. CREATE MAIN APPLICATION EXECUTABLE
 # ==============================================================================
