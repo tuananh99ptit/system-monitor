@@ -4,11 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-<<<<<<< HEAD
-CXX_INCLUDES = -I/src/process
-=======
-CXX_INCLUDES = 
->>>>>>> main
+CXX_INCLUDES = -I/home/anhtran99hn/system-monitor/src/process -I/home/anhtran99hn/system-monitor/src/app
 
 CXX_FLAGS = -std=gnu++17
 

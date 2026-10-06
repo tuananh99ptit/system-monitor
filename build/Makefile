@@ -117,6 +117,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named monitor
+
+# Build rule for target.
+monitor: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 monitor
+.PHONY : monitor
+
+# fast build rule for target.
+monitor/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/monitor.dir/build.make CMakeFiles/monitor.dir/build
+.PHONY : monitor/fast
+
+#=============================================================================
 # Target rules for targets named system_monitor
 
 # Build rule for target.
@@ -128,6 +141,30 @@ system_monitor: cmake_check_build_system
 system_monitor/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/system_monitor.dir/build.make CMakeFiles/system_monitor.dir/build
 .PHONY : system_monitor/fast
+
+src/app/app.o: src/app/app.cpp.o
+.PHONY : src/app/app.o
+
+# target to build an object file
+src/app/app.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/monitor.dir/build.make CMakeFiles/monitor.dir/src/app/app.cpp.o
+.PHONY : src/app/app.cpp.o
+
+src/app/app.i: src/app/app.cpp.i
+.PHONY : src/app/app.i
+
+# target to preprocess a source file
+src/app/app.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/monitor.dir/build.make CMakeFiles/monitor.dir/src/app/app.cpp.i
+.PHONY : src/app/app.cpp.i
+
+src/app/app.s: src/app/app.cpp.s
+.PHONY : src/app/app.s
+
+# target to generate assembly for a file
+src/app/app.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/monitor.dir/build.make CMakeFiles/monitor.dir/src/app/app.cpp.s
+.PHONY : src/app/app.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -153,13 +190,12 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/system_monitor.dir/build.make CMakeFiles/system_monitor.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-<<<<<<< HEAD
 src/process/process_monitor.o: src/process/process_monitor.cpp.o
 .PHONY : src/process/process_monitor.o
 
 # target to build an object file
 src/process/process_monitor.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/system_monitor.dir/build.make CMakeFiles/system_monitor.dir/src/process/process_monitor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/monitor.dir/build.make CMakeFiles/monitor.dir/src/process/process_monitor.cpp.o
 .PHONY : src/process/process_monitor.cpp.o
 
 src/process/process_monitor.i: src/process/process_monitor.cpp.i
@@ -167,7 +203,7 @@ src/process/process_monitor.i: src/process/process_monitor.cpp.i
 
 # target to preprocess a source file
 src/process/process_monitor.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/system_monitor.dir/build.make CMakeFiles/system_monitor.dir/src/process/process_monitor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/monitor.dir/build.make CMakeFiles/monitor.dir/src/process/process_monitor.cpp.i
 .PHONY : src/process/process_monitor.cpp.i
 
 src/process/process_monitor.s: src/process/process_monitor.cpp.s
@@ -175,11 +211,9 @@ src/process/process_monitor.s: src/process/process_monitor.cpp.s
 
 # target to generate assembly for a file
 src/process/process_monitor.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/system_monitor.dir/build.make CMakeFiles/system_monitor.dir/src/process/process_monitor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/monitor.dir/build.make CMakeFiles/monitor.dir/src/process/process_monitor.cpp.s
 .PHONY : src/process/process_monitor.cpp.s
 
-=======
->>>>>>> main
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -188,16 +222,17 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... monitor"
 	@echo "... system_monitor"
+	@echo "... src/app/app.o"
+	@echo "... src/app/app.i"
+	@echo "... src/app/app.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-<<<<<<< HEAD
 	@echo "... src/process/process_monitor.o"
 	@echo "... src/process/process_monitor.i"
 	@echo "... src/process/process_monitor.s"
-=======
->>>>>>> main
 .PHONY : help
 
 
