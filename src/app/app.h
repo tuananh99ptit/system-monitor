@@ -1,7 +1,7 @@
 #ifndef APP_H
 #define APP_H
 
-#include "memory/memory_monitor.h"
+#include "memory_monitor.h"
 class App {
 public:
     App() = default;
