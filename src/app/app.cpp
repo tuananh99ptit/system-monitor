@@ -1,5 +1,5 @@
 #include "app.h"
-
+#include "utils.h"
 #include <iostream>
 #include <iomanip>
 #include <vector>
@@ -36,17 +36,17 @@ void App::Display() {
         // ----- 2. MEMORY -----
         std::cout << "[ MEMORY ]\n";
         std::cout << "+-----------------------------+\n";
-        std::cout << "| Total : " << std::setw(7) << KbToGb(memInfo.total) << " GB      |\n";
-        std::cout << "| Used  : " << std::setw(7) << KbToGb(memInfo.used) << " GB      |\n";
-        std::cout << "| Free  : " << std::setw(7) << KbToGb(memInfo.free) << " GB      |\n";
+        std::cout << "| Total : " << std::setw(7) << Utils::KBToGB(memInfo.total) << " GB      |\n";
+        std::cout << "| Used  : " << std::setw(7) << Utils::KBToGB(memInfo.used) << " GB      |\n";
+        std::cout << "| Free  : " << std::setw(7) << Utils::KBToGB(memInfo.free) << " GB      |\n";
         std::cout << "+-----------------------------+\n\n";
 
         // ----- 3. DISK -----
         std::cout << "[ DISK ]\n";
         std::cout << "+-----------------------------+\n";
-        std::cout << "| Total : " << std::setw(7) << BytesToGb(diskInfo.total) << " GB      |\n";
-        std::cout << "| Used  : " << std::setw(7) << BytesToGb(diskInfo.used) << " GB      |\n";
-        std::cout << "| Free  : " << std::setw(7) << BytesToGb(diskInfo.free) << " GB      |\n";
+        std::cout << "| Total : " << std::setw(7) << Utils::BytesToGB(diskInfo.total) << " GB      |\n";
+        std::cout << "| Used  : " << std::setw(7) << Utils::BytesToGB(diskInfo.used) << " GB      |\n";
+        std::cout << "| Free  : " << std::setw(7) << Utils::BytesToGB(diskInfo.free) << " GB      |\n";
         std::cout << "| Usage : " << std::setw(7) << diskUsage << " %       |\n";
         std::cout << "+-----------------------------+\n\n";
 

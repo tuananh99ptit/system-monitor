@@ -1,9 +1,7 @@
 #include "process_monitor.h"
-#include <fstream>
-#include <sstream>
+#include "file_reader.h"
 #include <filesystem>
 #include <algorithm>
-#include <iostream>
 #include <cctype> // std::isdigit
 
 std::string ProcessMonitor::ConVertStateChar(char stateChar) {
@@ -23,16 +21,10 @@ std::string ProcessMonitor::ConVertStateChar(char stateChar) {
 
 bool ProcessMonitor::ReadProcessStat(int pid, ProcessInfo &outInfo) {
     std::string statPath = "/proc/" + std::to_string(pid) + "/stat";
-    std::ifstream file(statPath);
-
-    if (!file.is_open()) {
-        // The process might have terminated right when we opened the file (race condition)
+    std::string line = FileReader::ReadFirstLine(statPath);
+    if (line.empty()) {
         return false;
     }
-
-    // Read the single entire line inside /proc/[pid]/stat
-    std::string line;
-    std::getline(file, line);
 
     // Find the FIRST '(' and the LAST ')' to accurately extract the process name,
     // as the name itself may contain spaces or parentheses inside.

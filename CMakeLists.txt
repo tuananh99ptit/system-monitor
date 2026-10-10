@@ -22,15 +22,15 @@ add_library(
 # Declare header directories directly associated with the 'monitor' target
 target_include_directories(
     monitor PUBLIC
-    src/common/config
-    src/common/logger
-    src/common/file_reader
-    src/common/utils
-    src/cpu
-    src/memory
-    src/disk
-    src/process
-    src/app
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/common/config
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/common/logger
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/common/file_reader
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/common/utils
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/cpu
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/memory
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/disk
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/process
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/app
 )
 
 # ==============================================================================
