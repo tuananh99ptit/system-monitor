@@ -1,10 +1,9 @@
 #ifndef APP_H
 #define APP_H
-
-#include "cpu/cpu_monitor.h"
-#include "memory/memory_monitor.h"
-#include "disk/disk_monitor.h"
-#include "process/process_monitor.h"
+#include "cpu_monitor.h"
+#include "memory_monitor.h"
+#include "disk_monitor.h"
+#include "process_monitor.h"
 
 class App {
 public:
