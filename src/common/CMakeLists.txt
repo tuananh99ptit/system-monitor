@@ -1,11 +1,5 @@
-cmake_minimum_required(VERSION 3.10)
-project(system_monitor VERSION 1.0 LANGUAGES CXX)
-
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
 # ==============================================================================
-# 1. CREATE STATIC LIBRARY: libmonitor.a
+# 1. CREATE STATIC LIBRARY: libcommon.a
 # ==============================================================================
 add_library(
     common STATIC
@@ -14,18 +8,11 @@ add_library(
     utils/utils.cpp
 )
 
-# Declare header directories directly associated with the 'monitor' target
+# Declare header directories directly associated with the 'common' target
 target_include_directories(
     common PUBLIC
-    ${CMAKE_SOURCE_DIR}/src
+    ${CMAKE_CURRENT_SOURCE_DIR}/logger
+    ${CMAKE_CURRENT_SOURCE_DIR}/file_reader
+    ${CMAKE_CURRENT_SOURCE_DIR}/utils
+    ${CMAKE_CURRENT_SOURCE_DIR}/config
 )
-# ==============================================================================
-# 2. CREATE MAIN APPLICATION EXECUTABLE
-# ==============================================================================
-
-
-# ==============================================================================
-# 3. CREATE UNIT TEST TARGETS (IN TESTS/ DIRECTORY)
-# ==============================================================================
-
-
