@@ -16,6 +16,7 @@ add_library(
     src/memory/memory_monitor.cpp
     src/disk/disk_monitor.cpp
     src/process/process_monitor.cpp
+    src/app/app.cpp
 )
 
 # Declare header directories directly associated with the 'monitor' target
@@ -29,6 +30,7 @@ target_include_directories(
     src/memory
     src/disk
     src/process
+    src/app
 )
 
 # ==============================================================================
