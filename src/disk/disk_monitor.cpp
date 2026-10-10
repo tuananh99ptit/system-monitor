@@ -1,5 +1,6 @@
 #include "disk_monitor.h"
 #include <sys/statvfs.h>
+#include "logger.h"
 #include <iostream>
 DiskInfo DiskMonitor::GetDiskInfo(){
     
@@ -11,7 +12,8 @@ DiskInfo DiskMonitor::GetDiskInfo(){
     struct statvfs stat;
     // statvfs() reads filesystem infomation at path_ ex: /
     if(statvfs(path_.c_str(), &stat) != 0){
-        std::cerr << "Failed to read disk infomation at: " << path_ << std::endl;
+        // using Logger
+        Logger::Error("Failed to read disk information at: " + path_);
         return info;
     } 
 
@@ -57,8 +59,3 @@ float DiskMonitor::GetDiskUsage() {
 
     return (static_cast<float>(info.used) / static_cast<float>(denominator)) * 100.0f;
 }
-
-double BytesToGb(unsigned long long bytes){
-    return static_cast<double>(bytes) / (1024 * 1024 * 1024);
-}
-
