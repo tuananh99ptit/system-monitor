@@ -13,6 +13,7 @@ add_subdirectory(src/memory)
 add_subdirectory(src/disk)
 add_subdirectory(src/process)
 add_subdirectory(src/app)
+add_subdirectory(src/monitor)
 
 # ==============================================================================
 # 2. CREATE MAIN APPLICATION EXECUTABLE
@@ -28,3 +29,6 @@ target_link_libraries(test_common PRIVATE common)
 
 add_executable(test_logger tests/test_logger.cpp)
 target_link_libraries(test_logger PRIVATE app_lib)
+
+add_executable(test_monitor_data tests/test_monitor_data.cpp)   
+target_link_libraries(test_monitor_data PRIVATE monitor_lib)
