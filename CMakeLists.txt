@@ -32,3 +32,6 @@ target_link_libraries(test_logger PRIVATE app_lib)
 
 add_executable(test_monitor_data tests/test_monitor_data.cpp)   
 target_link_libraries(test_monitor_data PRIVATE monitor_lib)
+
+add_executable(test_monitor_worker tests/test_monitor_worker.cpp)
+target_link_libraries(test_monitor_worker PRIVATE monitor_lib)
