@@ -15,12 +15,14 @@ add_subdirectory(src/process)
 add_subdirectory(src/app)
 add_subdirectory(src/monitor)
 add_subdirectory(src/ui)
+add_subdirectory(src/signal)
 # ==============================================================================
 # 2. CREATE MAIN APPLICATION EXECUTABLE
 # ==============================================================================
 add_executable(system_monitor src/main.cpp)
 target_link_libraries(system_monitor PRIVATE app_lib)
 target_link_libraries(system_monitor PRIVATE monitor_lib ui_lib)
+target_link_libraries(system_monitor PRIVATE monitor_lib signal_lib)
 # ==============================================================================
 # 3. CREATE UNIT TEST TARGETS (IN TESTS/ DIRECTORY)
 # ==============================================================================
@@ -38,3 +40,6 @@ target_link_libraries(test_monitor_worker PRIVATE monitor_lib)
 
 add_executable(test_real_data tests/test_real_data.cpp)
 target_link_libraries(test_real_data PRIVATE monitor_lib ui_lib)
+
+add_executable(test_shutdown tests/test_shutdown.cpp)
+target_link_libraries(test_shutdown PRIVATE signal_lib)
