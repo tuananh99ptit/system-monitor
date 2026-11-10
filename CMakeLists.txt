@@ -16,6 +16,7 @@ add_subdirectory(src/app)
 add_subdirectory(src/monitor)
 add_subdirectory(src/ui)
 add_subdirectory(src/signal)
+add_subdirectory(src/apps)
 # ==============================================================================
 # 2. CREATE MAIN APPLICATION EXECUTABLE
 # ==============================================================================
@@ -24,14 +25,7 @@ target_link_libraries(system_monitor PRIVATE app_lib)
 target_link_libraries(system_monitor PRIVATE monitor_lib ui_lib)
 target_link_libraries(system_monitor PRIVATE monitor_lib signal_lib)
 # ==============================================================================
-# 3. SERVICE / CLIENT EXECUTABLES (PHASE 4)
-# ==============================================================================
-add_executable(monitor_service src/apps/monitor_service.cpp)
-add_executable(monitor_client src/apps/monitor_client.cpp)
-target_link_libraries(monitor_service PRIVATE signal_lib)
-target_link_libraries(monitor_client PRIVATE ui_lib signal_lib)
-# ==============================================================================
-# 4. CREATE UNIT TEST TARGETS (IN TESTS/ DIRECTORY)
+# 3. CREATE UNIT TEST TARGETS (IN TESTS/ DIRECTORY)
 # ==============================================================================
 add_executable(test_common tests/test_common.cpp)
 target_link_libraries(test_common PRIVATE common)
