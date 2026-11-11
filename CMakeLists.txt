@@ -4,6 +4,7 @@ project(system_monitor VERSION 1.0 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 # ==============================================================================
 # 1. ADD SUBDIRECTORIES (MODULES)
 # ==============================================================================
@@ -17,6 +18,7 @@ add_subdirectory(src/monitor)
 add_subdirectory(src/ui)
 add_subdirectory(src/signal)
 add_subdirectory(src/apps)
+add_subdirectory(src/ipc)
 # ==============================================================================
 # 2. CREATE MAIN APPLICATION EXECUTABLE
 # ==============================================================================

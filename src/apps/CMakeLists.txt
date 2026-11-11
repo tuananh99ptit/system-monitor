@@ -8,6 +8,7 @@ target_link_libraries(
     monitor_service PRIVATE
     monitor_lib
     signal_lib
+    ipc_lib
 )
 
 # 2. Client Process (Runs the display interface)
