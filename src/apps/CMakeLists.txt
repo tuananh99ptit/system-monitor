@@ -17,4 +17,5 @@ target_link_libraries(
     monitor_client PRIVATE
     ui_lib
     signal_lib
+    ipc_lib
 )

@@ -5,6 +5,7 @@
 add_library(
     ipc_lib STATIC
     unix_socket_server.cpp
+    unix_socket_client.cpp
 )
 
 target_include_directories(
