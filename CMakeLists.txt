@@ -46,3 +46,6 @@ target_link_libraries(test_real_data PRIVATE monitor_lib ui_lib)
 
 add_executable(test_shutdown tests/test_shutdown.cpp)
 target_link_libraries(test_shutdown PRIVATE signal_lib)
+
+add_executable(test_protocol tests/test_protocol.cpp)
+target_link_libraries(test_protocol PRIVATE ipc_lib)
