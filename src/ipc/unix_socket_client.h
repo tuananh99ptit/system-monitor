@@ -1,48 +1,62 @@
 #ifndef UNIX_SOCKET_CLIENT_H
 #define UNIX_SOCKET_CLIENT_H
 
+#include "client_data.h"
+#include <atomic>
+#include <mutex>
 #include <string>
-#include <sys/types.h>
+#include <thread>
 
-// Class encapsulating and managing the Client-side IPC connection using Unix Domain Socket (AF_UNIX)
+// Class managing the Client-side IPC connection using the "Object Owns Thread" pattern
 class UnixSocketClient {
 public:
-    // Constructor: Receives the socket file path (defaults to /tmp/system_monitor.sock)
-    // The explicit keyword prevents the compiler from performing implicit conversion from std::string
-    explicit UnixSocketClient(const std::string& socketPath = "/tmp/system_monitor.sock");
+    // Constructor: Receives a reference to the shared ClientData and the path to the socket file
+    explicit UnixSocketClient(ClientData& clientData, const std::string& socketPath = "/tmp/system_monitor.sock");
 
-    // Destructor: Automatically calls Disconnect() to close the socket and release the File Descriptor (RAII design standard)
+    // Destructor: Automatically calls stop() to terminate the background thread and safely close the socket (RAII)
     ~UnixSocketClient();
 
-    // Disable Copy Constructor and Copy Assignment Operator using the = delete keyword
-    // Reason: The class manages a unique system resource, the File Descriptor (clientFd_); copying would lead to a double-close error
+    // Disable Copy Constructor and Copy Assignment since the class owns a std::thread and File Descriptor
     UnixSocketClient(const UnixSocketClient&) = delete;
     UnixSocketClient& operator=(const UnixSocketClient&) = delete;
 
-    // Executes socket() and connect() system calls to the Server, returning true on success
-    bool Connect();
+    // Starts the background communication thread (socketThread_)
+    bool start();
 
-    // Safely disconnects from the Server: shuts down the I/O stream with shutdown() and closes clientFd_
-    void Disconnect();
+    // Stops the background communication thread, closes the socket, and reclaims the thread via join()
+    void stop();
 
-    // Const getter method: Checks whether the Client currently holds a valid connection to the Server
-    bool IsConnected() const;
-
-    // Sends text string data (or JSON/Payload strings) to the Server
-    bool SendMessage(const std::string& message);
-
-    // Reads data from the Server into the buffer array, returning the actual number of bytes read (or <= 0 on disconnect/error)
-    ssize_t ReceiveMessage(char* buffer, size_t bufferSize);
+    // Checks whether the communication thread is currently active
+    bool isRunning() const;
 
 private:
-    // Stores the path to the virtual socket file on the system disk (/tmp/system_monitor.sock)
+    // Main execution routine of the background thread: Connect -> Send Request -> Receive Response -> Update ClientData
+    void run();
+
+    // Internal helper to establish the Unix Domain Socket connection to the Server
+    bool connectToServer();
+
+    // Internal helper to safely close the File Descriptor
+    void closeSocket();
+
+private:
+    // Path to the virtual socket file (/tmp/system_monitor.sock)
     std::string socketPath_;
 
-    // Client's Socket File Descriptor (default initialized to -1, meaning unopened)
-    int clientFd_{-1};
+    // Client's Socket File Descriptor (-1 means unopened)
+    int socketFd_{-1};
 
-    // Flag tracking the connection state (true: successfully connected, false: disconnected/not connected)
-    bool connected_{false};
+    // Mutex protecting shutdown/close operations on socketFd_ between two threads
+    std::mutex fdMutex_;
+
+    // Worker thread object dedicated to IPC communication
+    std::thread socketThread_;
+
+    // Atomic flag controlling the thread's lifecycle loop
+    std::atomic<bool> running_{false};
+
+    // Reference to the data storage shared with the Main Thread (UI)
+    ClientData& clientData_;
 };
 
 #endif // UNIX_SOCKET_CLIENT_H
