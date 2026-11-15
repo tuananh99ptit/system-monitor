@@ -30,31 +30,29 @@ bool UnixSocketClient::start() {
     return true;
 }
 
-// Stop the background communication thread safely (Graceful Shutdown)
 void UnixSocketClient::stop() {
-    // Lower the running_ flag to false; if it was already false, exit early
-    if(!running_.exchange(false)) {
-        // Still check joinable() in case run() exited early due to a connection error before stop() was called
-        if(socketThread_.joinable()) {
+    // 1. Lower the running_ flag to false
+    if (!running_.exchange(false)) {
+        if (socketThread_.joinable()) {
             socketThread_.join();
         }
         return;
     }
 
-    // Proactively call shutdown() to immediately wake up recv() or connect() if blocked inside run()
+    // 2. IMPORTANT: Call shutdown() to break the blocking recv() call in the background thread
     {
         std::lock_guard<std::mutex> lock(fdMutex_);
-        if(socketFd_ >= 0) {
-            shutdown(socketFd_, SHUT_RDWR);
+        if (socketFd_ >= 0) {
+            shutdown(socketFd_, SHUT_RDWR); // Immediately wake up the blocking recv() or connect() call
         }
     }
 
-    // Wait for the worker thread to finish completely before reclaiming thread resources
-    if(socketThread_.joinable()) {
+    // 3. Wait for the background thread to finish safely
+    if (socketThread_.joinable()) {
         socketThread_.join();
     }
 
-    // Fully close the File Descriptor after the worker thread has stopped
+    // 4. Completely close the socket
     closeSocket();
     std::cout << "[Client] Socket thread stopped safely.\n";
 }
@@ -105,7 +103,7 @@ void UnixSocketClient::closeSocket() {
     }
 }
 
-// Main communication loop running on the background worker thread (socketThread_)
+// Main communication loop running on the background worker thread (socketThread_) using the Subscriber model
 void UnixSocketClient::run() {
     // Step 1: Establish connection to the Server; if it fails, lower running_ and exit the thread
     if (!connectToServer()) {
@@ -113,43 +111,27 @@ void UnixSocketClient::run() {
         return;
     }
 
-    // Step 2: Periodic request-response loop every second while the running_ flag remains active
+    // Step 2: Loop to listen for data proactively pushed by the Server (Server Push)
     while (running_.load()) {
-        // 2.1. Create the JSON Request message: {"type":"get_status"}
-        std::string request = ipc::Protocol::CreateGetStatusRequest();
-
-        // 2.2. Send the framed Request message over the Socket
-        if (!ipc::Protocol::SendMessage(socketFd_, request)) {
-            if (running_.load()) {
-                std::cerr << "[Client Error] Connection lost while sending Request to Server.\n";
-            }    
-            break; // Exit loop if sending fails
-        }
-
-        // 2.3. Block and wait to receive the complete JSON Response message frame from the Server
+        // 2.1. Block and wait to receive the complete JSON message frame pushed from the Server
         std::string response;
         if (!ipc::Protocol::ReceiveMessage(socketFd_, response)) {
             if (running_.load()) {
                 std::cerr << "[Client] Server closed the connection or data receive error occurred.\n";
             }
-            break; // Exit loop when Server disconnects
+            break; // Exit the loop when the Server disconnects
         }
 
-        // 2.4. Deserialize the JSON Response string into StatusPayload and update ClientData
+        // 2.2. Deserialize the received JSON string into a StatusPayload struct and update ClientData
         ipc::StatusPayload parsedStatus{};
         if (ipc::Protocol::ParseStatusRespone(response, parsedStatus)) {
-            clientData_.update(parsedStatus); // Thread-safe write via mutex for the Main Thread to read
+            clientData_.update(parsedStatus); // Thread-safe write via mutex for the Main Thread to render the UI
         } else {
             std::cerr << "[Client Warning] Failed to parse JSON Response: " << response << "\n";
         }
+    }
 
-        // 2.5. Sleep for 1 second between samples, split into ten 100ms intervals for fast exit when stop() is called
-        for (int i = 0; i < 10 && running_.load(); ++i) {
-            std::this_thread::sleep_for(std::chrono::milliseconds(100));
-        }
-    } // <--- Closing brace of while(running_.load()) here
-
-    // Step 3: Clean up the socket OUTSIDE the loop before completely terminating the worker thread
+    // Step 3: Clean up the socket outside the loop before terminating the worker thread
     closeSocket();
     running_.store(false);
 }

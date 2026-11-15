@@ -1,60 +1,47 @@
-/*
-Task 4 : phase 4
-Standard 2-Process testing procedure:
-Due to the nature of the Client-Server IPC model, the Server must be running concurrently for the Client (nc - Netcat) to connect.
-Open Terminal 1 (Service): ./monitor_service (Leave Terminal 1 running in the background, DO NOT press Ctrl+C.)
-Open Terminal 2 (Client - Click the + icon or Split Terminal in VS Code): nc -U /tmp/system_monitor.sock
--> output: [Server] Client connected! (clientFd = 4)
-*/
+#include "monitor_data.h"       // Thread-safe hardware data storage from Phase 3
+#include "monitor_worker.h"     // Background thread collecting CPU, RAM, and Disk metrics from Phase 3
+#include "signal_handler.h"     // Ctrl+C (SIGINT/SIGTERM) signal handler from Phase 4
+#include "unix_socket_server.h" // Self-threaded IPC Server Publisher class from Task 8
 
-#include "signal_handler.h"
-#include "unix_socket_server.h" // Add IPC Server Header from Task 4
-
-#include <chrono>
-#include <iostream>
-#include <thread> // Add thread library to run ListenLoop in the background
-#include <unistd.h>
+#include <chrono>               // Provides std::chrono::seconds
+#include <iostream>             // Provides std::cout and std::cerr
+#include <unistd.h>             // Provides getpid() and getppid()
 
 int main() {
-    // 1. Register system signal handlers (SIGINT, SIGTERM)
+    // 1. Install signal handlers to support safe Service shutdown via Ctrl+C
     if (!ShutdownSignal::Install()) {
         std::cerr << "Failed to install signal handlers\n";
         return 1;
     }
 
-    std::cout << "Monitor Service Started (pid=" << getpid() << ", ppid=" << getppid() << ")" << std::endl;
+    std::cout << "Monitor Service Started (pid=" << getpid() << ", ppid=" << getppid() << ")\n";
 
-    // TODO Task 8: start MonitorWorker (already implemented in Phase 3)
+    // 2. Initialize the shared MonitorData storage
+    MonitorData monitorData;
 
-    // 2. Integrate Task 4: Initialize and start the Unix Socket Server
-    UnixSocketServer server("/tmp/system_monitor.sock");
-    if (!server.Start()) {
-        std::cerr << "Failed to start Unix Socket Server\n";
+    // 3. Start the Worker thread to read real metrics from /proc every 1 second and write to monitorData
+    MonitorWorker worker(monitorData);
+    worker.Start();
+
+    // 4. Start the Socket Server thread to proactively push data from monitorData to the Client
+    UnixSocketServer server(monitorData, "/tmp/system_monitor.sock");
+    if (!server.start()) {
+        std::cerr << "[Service Error] Failed to start Unix Socket Server!\n";
+        worker.Stop();
         return 1;
     }
 
-    // 3. Offload ListenLoop() to a separate worker thread (Server Thread)
-    // Reason: accept() inside ListenLoop is a Blocking System Call.
-    // If run on the Main Thread, the program would block at accept() and never reach the ShutdownSignal loop.
-    std::thread serverThread([&server]() {
-        server.ListenLoop();
-    });
-
-    // 4. Keep the Service process alive until SIGINT (Ctrl+C) or SIGTERM is received
+    // 5. Main Thread sleeps while waiting for the shutdown signal (zero CPU overhead)
     while (!ShutdownSignal::IsRequested()) {
         ShutdownSignal::SleepUnlessRequested(std::chrono::seconds(1));
     }
 
-    std::cout << "\nReceived signal: " << ShutdownSignal::LastSignal() << std::endl;
+    std::cout << "\n[Service] Stopping process...\n";
 
-    // 5. Perform Graceful Shutdown
-    // - Stop the Server (lower the running_ flag and close serverFd_)
-    // - Reclaim the serverThread using join()
-    server.Stop();
-    if (serverThread.joinable()) {
-        serverThread.join();
-    }
+    // 6. Stop the network communication thread and the data collection thread in reverse order
+    server.stop();
+    worker.Stop();
 
-    std::cout << "Monitor Service stopped." << std::endl;
+    std::cout << "Monitor Service stopped.\n";
     return 0;
 }
