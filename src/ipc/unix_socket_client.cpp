@@ -8,40 +8,40 @@
 #include <sys/un.h>
 #include <unistd.h>
 
-// Constructor: Initialize the clientData_ reference and store socketPath_
+// Constructor: Initialize socket path and store reference to the ClientData cache
 UnixSocketClient::UnixSocketClient(ClientData& clientData, const std::string& socketPath)
     : socketPath_(socketPath), clientData_(clientData) {}
 
-// Destructor: Ensure the background thread is always stopped and joined before destroying the object
+// Destructor: Automatically call stop() to clean up the thread and close the socket safely following RAII
 UnixSocketClient::~UnixSocketClient() {
     stop();
 }
 
-// Start the background communication thread
+// Start client method: set the running flag and launch the background socketThread_
 bool UnixSocketClient::start() {
-    // If the thread is already running, do not spawn a duplicate thread
+    // If already running, do not restart
     if(running_.load()) {
         return true;
     }
-    running_.store(true);   // Set running_ = true before spawning the thread to prevent a race condition upon entering run()
+    // Set the loop control flag - Set running_ = true before creating the thread to avoid a race condition when entering run()
+    running_.store(true);
 
-    // Create a std::thread running the private member function UnixSocketClient::run on 'this' instance
+    // Initialize std::thread to run the private member method UnixSocketClient::run on 'this' object
     socketThread_ = std::thread(&UnixSocketClient::run, this);
     return true;
 }
 
-// Stop the background communication thread safely (Graceful Shutdown)
+// Safely stop the background communication thread (Graceful Shutdown)
 void UnixSocketClient::stop() {
-    // Lower the running_ flag to false; if it was already false, exit early
+    // Lower running_ flag to false; if already stopped, join the thread and return
     if(!running_.exchange(false)) {
-        // Still check joinable() in case run() exited early due to a connection error before stop() was called
         if(socketThread_.joinable()) {
             socketThread_.join();
         }
         return;
     }
 
-    // Proactively call shutdown() to immediately wake up recv() or connect() if blocked inside run()
+    // Lock mutex to protect the file descriptor and proactively call shutdown() to immediately wake up any blocked recv() or connect() in run()
     {
         std::lock_guard<std::mutex> lock(fdMutex_);
         if(socketFd_ >= 0) {
@@ -49,23 +49,24 @@ void UnixSocketClient::stop() {
         }
     }
 
-    // Wait for the worker thread to finish completely before reclaiming thread resources
+    // Wait for the background worker thread to finish completely before reclaiming thread resources
     if(socketThread_.joinable()) {
         socketThread_.join();
     }
 
-    // Fully close the File Descriptor after the worker thread has stopped
+    // Completely close the File Descriptor after the background thread has stopped
     closeSocket();
     std::cout << "[Client] Socket thread stopped safely.\n";
 }
 
-// Check the active status of the Client thread
+// Check the running status of the Client thread
 bool UnixSocketClient::isRunning() const {
     return running_.load();
 }
 
-// Establish connection to the Monitor Service via Unix Domain Socket
+// Establish a connection to the Monitor Service via Unix Domain Socket
 bool UnixSocketClient::connectToServer() {
+
     // Request the OS to allocate an AF_UNIX Socket File Descriptor
     int fd = socket(AF_UNIX, SOCK_STREAM, 0);
     if(fd < 0) {
@@ -73,15 +74,16 @@ bool UnixSocketClient::connectToServer() {
         return false;
     }
 
-    // Configure the target socket file address
+    // Initialize the Unix Domain Socket address structure
     struct sockaddr_un addr{};
     std::memset(&addr, 0, sizeof(addr));
     addr.sun_family = AF_UNIX;
     std::strncpy(addr.sun_path, socketPath_.c_str(), sizeof(addr.sun_path) - 1);
 
-    // Connect to the Server
-    if (connect(fd, reinterpret_cast<struct sockaddr*>(&addr), sizeof(addr))) {
-        perror("[Client Error] Failed to connect to Server (Is Monitor Service running?)");
+    // Call connect() to connect to the Service's socket file
+    // If connection fails, close the newly created fd
+    if (connect(fd, reinterpret_cast<struct sockaddr*>(&addr), sizeof(addr)) < 0){
+        perror("[Client Error] Failed to connect to Server (Monitor Service not running?)");
         close(fd);
         return false;
     }
@@ -92,64 +94,63 @@ bool UnixSocketClient::connectToServer() {
         socketFd_ = fd;
     }
 
-    std::cout << "[Client] Connected to Server at: " << socketPath_ << "\n";
-    return true;
+     std::cout << "[Client] Connected to Server at: " << socketPath_ << "\n";
+     return true;
 }
 
 // Safely close the File Descriptor
 void UnixSocketClient::closeSocket() {
     std::lock_guard<std::mutex> lock(fdMutex_);
-    if(socketFd_ >= 0) {
+    if (socketFd_ >= 0) {
         close(socketFd_);
         socketFd_ = -1;
     }
 }
 
-// Main communication loop running on the background worker thread (socketThread_)
+// Main loop running on the background thread following a periodic Request / Response model
 void UnixSocketClient::run() {
-    // Step 1: Establish connection to the Server; if it fails, lower running_ and exit the thread
-    if (!connectToServer()) {
-        running_.store(false);
-        return;
-    }
-
-    // Step 2: Periodic request-response loop every second while the running_ flag remains active
-    while (running_.load()) {
-        // 2.1. Create the JSON Request message: {"type":"get_status"}
-        std::string request = ipc::Protocol::CreateGetStatusRequest();
-
-        // 2.2. Send the framed Request message over the Socket
-        if (!ipc::Protocol::SendMessage(socketFd_, request)) {
-            if (running_.load()) {
-                std::cerr << "[Client Error] Connection lost while sending Request to Server.\n";
-            }    
-            break; // Exit loop if sending fails
-        }
-
-        // 2.3. Block and wait to receive the complete JSON Response message frame from the Server
-        std::string response;
-        if (!ipc::Protocol::ReceiveMessage(socketFd_, response)) {
-            if (running_.load()) {
-                std::cerr << "[Client] Server closed the connection or data receive error occurred.\n";
+    while(running_.load()) {
+        // Connection loop: If not yet connected to the Service, retry every second
+        if(!connectToServer()) {
+            for (int i = 0; i < 10  && running_.load(); ++i) {
+                std::this_thread::sleep_for(std::chrono::milliseconds(100));
             }
-            break; // Exit loop when Server disconnects
+            continue;
         }
 
-        // 2.4. Deserialize the JSON Response string into StatusPayload and update ClientData
-        ipc::StatusPayload parsedStatus{};
-        if (ipc::Protocol::ParseStatusRespone(response, parsedStatus)) {
-            clientData_.update(parsedStatus); // Thread-safe write via mutex for the Main Thread to read
-        } else {
-            std::cerr << "[Client Warning] Failed to parse JSON Response: " << response << "\n";
-        }
+        // Request/Response communication loop once connected successfully
+        while(running_.load()) {
+            // Step 1: Create JSON Request message containing {"type":"get_status"}
+            std::string request = ipc ::Protocol ::CreateGetStatusRequest();
 
-        // 2.5. Sleep for 1 second between samples, split into ten 100ms intervals for fast exit when stop() is called
-        for (int i = 0; i < 10 && running_.load(); ++i) {
-            std::this_thread::sleep_for(std::chrono::milliseconds(100));
-        }
-    } // <--- Closing brace of while(running_.load()) here
+            // Step 2: Send Request message to the Service via socket
+            if(!ipc::Protocol::SendMessage(socketFd_, request)) {
+                std::cerr << "[Client Error] Connection lost while sending Request.\n";
+                break;          // Exit loop if sending fails
+            }
 
-    // Step 3: Clean up the socket OUTSIDE the loop before completely terminating the worker thread
-    closeSocket();
-    running_.store(false);
+            // Step 3: Wait to receive Response message from the Service (Blocking data read)
+            std::string response;
+            if(!ipc::Protocol::ReceiveMessage(socketFd_, response)){
+                std::cerr << "[Client] Server closed the connection.\n";
+                break;          // Exit loop when Server disconnects
+            }
+
+            // Step 4: Decode JSON Response string into StatusPayload struct and update ClientData
+            ipc::StatusPayload parsedStatus{};
+            if(ipc::Protocol::ParseStatusRespone(response, parsedStatus)) {
+                // Safely update data into cache for Main Thread to draw UI
+                clientData_.update(parsedStatus);
+            } else {
+                std::cerr << "[Client Warning] Failed to parse JSON Response.\n";
+            }
+
+            // Step 5: Sleep for 1 second before sending the next request (split into 10 ticks of 100ms for fast stop responsiveness)
+            for (int i = 0; i < 10 && running_.load(); ++i) {
+                std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            }
+        }
+        // Close socket upon disconnection to prepare for reconnection in the outer loop
+        closeSocket();
+    }
 }

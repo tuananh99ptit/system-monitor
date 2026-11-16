@@ -1,63 +1,51 @@
-#include "client_data.h"        // Thread-safe data storage from Task 7
-#include "signal_handler.h"     // Ctrl+C (SIGINT/SIGTERM) signal handler from Phase 4
-#include "unix_socket_client.h" // Self-threaded IPC Client class from Task 7
+#include "client_data.h"        
+#include "console_renderer.h"   
+#include "signal_handler.h"     
+#include "unix_socket_client.h" 
 
-#include <chrono>   // Provides std::chrono::seconds
-#include <iomanip>  // Provides std::fixed and std::setprecision for decimal formatting
-#include <iostream> // Provides std::cout and std::cerr
-#include <unistd.h> // Provides getpid() and getppid()
+#include <chrono>               
+#include <iostream>             
+#include <unistd.h>             
 
-int main() {
-    // 1. Register system signal handlers to support safe process termination via Ctrl+C
+int main() {                    
+    // 1. Install graceful shutdown signal handlers for the client process
     if (!ShutdownSignal::Install()) {
-        std::cerr << "Failed to install signal handlers\n";
+        std::cerr << "[Client Error] Failed to install signal handlers\n";
         return 1;
     }
 
+    // Print client startup message with PID and PPID
     std::cout << "Monitor Client Started (pid=" << getpid() << ", ppid=" << getppid() << ")\n";
 
-    // 2. Initialize the shared ClientData storage and the UnixSocketClient connection manager
+    // 2. Initialize ClientData Cache and the UnixSocketClient background thread for network communication
     ClientData clientData;
     UnixSocketClient client(clientData, "/tmp/system_monitor.sock");
 
-    // 3. Start the background communication thread (socketThread_ automatically connects and fetches data every 1s)
+    // Start the socket client thread; exit if it fails
     if (!client.start()) {
-        std::cerr << "[Client] Failed to start the IPC communication thread!\n";
+        std::cerr << "[Client Error] Failed to start UnixSocketClient\n";
         return 1;
     }
 
-    // 4. Main Thread (UI Thread) primary loop:
-    // Simply reads the latest data from ClientData and renders it to the screen every 1 second
-    while (!ShutdownSignal::IsRequested() && client.isRunning()) {
-        if (clientData.hasData()) {
-            // Retrieve a copy of the latest data safely via mutex
-            ipc::StatusPayload status = clientData.get();
+    // 3. Initialize ConsoleRenderer, passing clientData directly into the constructor
+    ConsoleRenderer renderer(clientData);
 
-            // Display metrics on the Console following the exact output format of Task 7
-            std::cout << "\033[2J\033[H"; // ANSI escape code to clear the Console screen and move cursor to top-left
-            std::cout << "========================================\n";
-            std::cout << "       SYSTEM MONITOR (IPC CLIENT)      \n";
-            std::cout << "========================================\n";
-            std::cout << std::fixed << std::setprecision(1);
-            std::cout << "CPU   : " << status.cpu << "%\n";
-            std::cout << "MEM   : " << status.memory << "%\n";
-            std::cout << "DISK  : " << status.disk << "%\n";
-            std::cout << "PROCS : " << status.processCount << "\n";
-            std::cout << "========================================\n";
-            std::cout << "(Press Ctrl+C to exit)\n" << std::flush;
+    // 4. UI loop on Main Thread: check for data and call Render() in real-time every second
+    while (!ShutdownSignal::IsRequested() && client.isRunning()) {
+        if (clientData.hasData()) { // Check if the cache has received data from the Service
+            renderer.Render();      // Call Render() without arguments to automatically fetch data and draw the UI
         } else {
-            std::cout << "[Client] Waiting for initial data from Monitor Service...\n";
+            std::cout << "[Client] Waiting for data from Monitor Service...\n"; // Message when no data is available yet
         }
 
-        // Sleep for 1 second before the next UI render (wakes up immediately if Ctrl+C is pressed)
+        // Main Thread sleeps for 1 second before repeating the next UI rendering cycle
         ShutdownSignal::SleepUnlessRequested(std::chrono::seconds(1));
     }
 
+    // 5. Upon receiving a shutdown signal, gracefully stop the Client
     std::cout << "\n[Client] Stopping process...\n";
+    client.stop(); // Gracefully stop the socket client thread
 
-    // 5. Stop the background communication thread and safely join the thread before exiting main()
-    client.stop();
-
-    std::cout << "Monitor Client stopped.\n";
-    return 0;
+    std::cout << "Monitor Client stopped.\n"; 
+    return 0;                                 
 }
