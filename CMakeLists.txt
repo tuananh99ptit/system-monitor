@@ -1,10 +1,21 @@
 cmake_minimum_required(VERSION 3.10)
 project(system_monitor VERSION 1.0 LANGUAGES CXX)
 
+# Enforce C++17 standard
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
+set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+
+# ==============================================================================
+# QT6 CONFIGURATION (For Phase 5 GUI - Automate Q_OBJECT macros)
+# ==============================================================================
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTORCC ON)
+
+find_package(Qt6 REQUIRED COMPONENTS Widgets)
+
 # ==============================================================================
 # 1. ADD SUBDIRECTORIES (MODULES)
 # ==============================================================================
@@ -19,6 +30,8 @@ add_subdirectory(src/ui)
 add_subdirectory(src/signal)
 add_subdirectory(src/apps)
 add_subdirectory(src/ipc)
+add_subdirectory(src/gui)
+
 # ==============================================================================
 # 2. CREATE MAIN APPLICATION EXECUTABLE
 # ==============================================================================
@@ -26,6 +39,7 @@ add_executable(system_monitor src/main.cpp)
 target_link_libraries(system_monitor PRIVATE app_lib)
 target_link_libraries(system_monitor PRIVATE monitor_lib ui_lib)
 target_link_libraries(system_monitor PRIVATE monitor_lib signal_lib)
+
 # ==============================================================================
 # 3. CREATE UNIT TEST TARGETS (IN TESTS/ DIRECTORY)
 # ==============================================================================
