@@ -3,7 +3,8 @@
 #include <QMainWindow>
 
 class MainWindow : public QMainWindow {
-    Q_OBJECT // Macro bắt buộc cho mọi class sử dụng hệ thống Signal/Slot của Qt
+    // Required macro for any class using Qt's Signal/Slot mechanism
+    Q_OBJECT
 
 public:
     explicit MainWindow(QWidget* parent = nullptr);

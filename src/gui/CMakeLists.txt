@@ -1,6 +1,8 @@
 add_library(gui_lib STATIC
     main_window.cpp
     main_window.h
+    dashboard_widget.cpp
+    dashboard_widget.h
 )
 
 target_include_directories(gui_lib PUBLIC
