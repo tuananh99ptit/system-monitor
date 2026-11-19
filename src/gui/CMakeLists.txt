@@ -3,6 +3,8 @@ add_library(gui_lib STATIC
     main_window.h
     dashboard_widget.cpp
     dashboard_widget.h
+    top_toolbar.cpp
+    top_toolbar.h
 )
 
 target_include_directories(gui_lib PUBLIC

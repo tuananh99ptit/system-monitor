@@ -1,40 +1,32 @@
 #include "main_window.h"
-#include "dashboard_widget.h"
+#include "dashboard_widget.h"   // Include DashboardWidget definition
+#include "top_toolbar.h"        // Include TopToolbar definition
 
-#include <QAction>
-#include <QToolBar>
+#include <QDebug>
+#include <QVBoxLayout>
+#include <QWidget>
 
-MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent) {
-    // Set initial window dimensions
-    resize(800, 600);
-    // Set window title
-    setWindowTitle("System Monitor");
+MainWindow::MainWindow(QWidget* parent)
+    : QMainWindow(parent) {
+    resize(800, 600);                                       // Set initial window dimensions
+    setWindowTitle("System Monitor");                       // Set window title
 
-    // Integrate Task 2
-    dashboard_ = new DashboardWidget(this); // Set MainWindow as parent
+    auto* centralContainer = new QWidget(this);             // Central widget containing both the toolbar and dashboard
+    auto* mainLayout = new QVBoxLayout(centralContainer);   // Vertical layout stacking TopToolbar above DashboardWidget
 
-    // Set Dashboard as the central widget
-    setCentralWidget(dashboard_);
+    toolbar_ = new TopToolbar(centralContainer);            // Initialize TopToolbar as a child of centralContainer
+    dashboard_ = new DashboardWidget(centralContainer);     // Initialize DashboardWidget as a child of centralContainer
 
-    // Initialize the toolbar and connect signals/slots
-    setupToolbar();
+    mainLayout->addWidget(toolbar_, 0);                     // Place the toolbar at the top
+    mainLayout->addWidget(dashboard_, 1);                   // Place the dashboard at the bottom
+    centralContainer->setLayout(mainLayout);                // Set the layout for the container
+    setCentralWidget(centralContainer);                     // Set the container as the central widget of QMainWindow
+
+    connect(toolbar_, &TopToolbar::refreshClicked,          // When Refresh is clicked on TopToolbar
+            this, &MainWindow::onRefreshClicked);           // Invoke the handler slot on MainWindow
 }
 
-void MainWindow::setupToolbar() {
-    // Initialize the toolbar and connect signals/slots
-    auto* toolbar = addToolBar("Main Toolbar");
-
-    // Lock the toolbar position for a consistent UI layout
-    toolbar->setMovable(false);
-
-    // Create the Refresh action with MainWindow as parent
-    auto* refreshAction = new QAction("Refresh", this);
-
-    // Add the Refresh button to the toolbar
-    toolbar->addAction(refreshAction);
-
-    // When the user clicks the Refresh button
-    // Invoke the slot to update metrics on DashboardWidget
-    connect(refreshAction, &QAction::triggered,
-            dashboard_, &DashboardWidget::onRefreshRequested);
+void MainWindow::onRefreshClicked() {
+    qDebug() << "Refresh requested";                        // Log message to verify signal/slot execution
+    dashboard_->onRefreshRequested();                       // Fixed dashboard -> dashboard_ to call the proper member pointer
 }

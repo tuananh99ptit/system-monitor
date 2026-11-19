@@ -2,21 +2,28 @@
 
 #include <QMainWindow>
 
-// Forward declaration for the central widget
+// Widget displaying metrics in the central area
 class DashboardWidget;
+
+// Top toolbar widget
+class TopToolbar;
 
 class MainWindow : public QMainWindow {
     // Required macro for any class using Qt's Signal/Slot mechanism
     Q_OBJECT
 
 public:
-    // Initialize the window, toolbar, and central widget
+    // Initialize the UI and connect signals/slots
     explicit MainWindow(QWidget* parent = nullptr);
 
-private:
-    // Separate helper method to build the toolbar for cleaner code
-    void setupToolbar();
+private slots:
+    // Slot triggered when TopToolbar emits the refreshClicked() signal
+    void onRefreshClicked();
 
-    // Pointer holding the Dashboard widget for connecting signals/slots
+private:
+    // Toolbar containing the Refresh button
+    TopToolbar* toolbar_ = nullptr;
+
+    // Dashboard displaying system metrics
     DashboardWidget* dashboard_ = nullptr;
 };
