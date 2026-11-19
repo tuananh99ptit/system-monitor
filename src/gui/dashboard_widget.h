@@ -2,13 +2,22 @@
 
 #include <QWidget>
 
+// Forward declaration to reduce header dependencies
 class QLabel;
 
 class DashboardWidget : public QWidget {
-    Q_OBJECT
+    Q_OBJECT // Required for classes using Qt's signal/slot or meta-object system
 
 public:
+    // Initialize the layout and initial labels
     explicit DashboardWidget(QWidget* parent = nullptr);
+
+    // Update the text for all metric labels
+    void updateMetrics(int cpuPercent, int memoryPercent, int diskPercent, int processCount);
+
+public slots:
+    // Slot triggered when the Refresh button on the toolbar is clicked
+    void onRefreshRequested();
 
 private:
     // Label displaying CPU usage percentage
@@ -22,4 +31,7 @@ private:
 
     // Label displaying total process count
     QLabel* processLabel_ = nullptr;
+
+    // Count the number of refreshes to generate test data
+    int refreshCount = 0;
 };
