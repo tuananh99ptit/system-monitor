@@ -8,6 +8,9 @@ class DashboardWidget;
 // Top toolbar widget
 class TopToolbar;
 
+// Qt wrapper encapsulating UnixSocketClient and ClientData
+class SocketClient;
+
 class MainWindow : public QMainWindow {
     // Required macro for any class using Qt's Signal/Slot mechanism
     Q_OBJECT
@@ -26,4 +29,7 @@ private:
 
     // Dashboard displaying system metrics
     DashboardWidget* dashboard_ = nullptr;
+
+    // Wrapper communicating with the monitor service via Unix socket
+    SocketClient* socketClient_ = nullptr;
 };

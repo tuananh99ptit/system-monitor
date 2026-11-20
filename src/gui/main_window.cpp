@@ -1,7 +1,7 @@
 #include "main_window.h"
-#include "dashboard_widget.h"   // Include DashboardWidget definition
-#include "top_toolbar.h"        // Include TopToolbar definition
-
+#include "dashboard_widget.h"   
+#include "top_toolbar.h"        
+#include "socket_client.h"
 #include <QDebug>
 #include <QVBoxLayout>
 #include <QWidget>
@@ -16,6 +16,8 @@ MainWindow::MainWindow(QWidget* parent)
 
     toolbar_ = new TopToolbar(centralContainer);            // Initialize TopToolbar as a child of centralContainer
     dashboard_ = new DashboardWidget(centralContainer);     // Initialize DashboardWidget as a child of centralContainer
+    // Initialize Qt wrapper pointing to the service's IPC socket
+    socketClient_ = new SocketClient(QStringLiteral("/tmp/system_monitor.sock"), this); 
 
     mainLayout->addWidget(toolbar_, 0);                     // Place the toolbar at the top
     mainLayout->addWidget(dashboard_, 1);                   // Place the dashboard at the bottom
@@ -24,9 +26,16 @@ MainWindow::MainWindow(QWidget* parent)
 
     connect(toolbar_, &TopToolbar::refreshClicked,          // When Refresh is clicked on TopToolbar
             this, &MainWindow::onRefreshClicked);           // Invoke the handler slot on MainWindow
-}
+
+    connect(socketClient_, &SocketClient::statusReceived,   // When SocketClient receives new data from IPC
+            dashboard_, &DashboardWidget::updateStatus);    // Forward data to DashboardWidget (without using the socket directly)
+
+    socketClient_->connectToService();                      // Start the connection / worker thread to the monitor service
+}   
 
 void MainWindow::onRefreshClicked() {
     qDebug() << "Refresh requested";                        // Log message to verify signal/slot execution
-    dashboard_->onRefreshRequested();                       // Fixed dashboard -> dashboard_ to call the proper member pointer
+    if (socketClient_) {                                    // Verify that the wrapper pointer is valid
+        socketClient_->requestStatus();                     // Request SocketClient to read data and emit statusReceived
+    }
 }

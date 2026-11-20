@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QWidget>
+#include "monitor_data.h"
 
 // Forward declaration to reduce header dependencies
 class QLabel;
@@ -18,6 +19,9 @@ public:
 public slots:
     // Slot triggered when the Refresh button on the toolbar is clicked
     void onRefreshRequested();
+
+    // Update CPU, Memory, Disk, and Process metrics from SystemInfo
+    void updateStatus(const SystemInfo& info);
 
 private:
     // Label displaying CPU usage percentage

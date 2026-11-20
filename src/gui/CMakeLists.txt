@@ -5,6 +5,8 @@ add_library(gui_lib STATIC
     dashboard_widget.h
     top_toolbar.cpp
     top_toolbar.h
+    socket_client.h
+    socket_client.cpp
 )
 
 target_include_directories(gui_lib PUBLIC
@@ -13,4 +15,5 @@ target_include_directories(gui_lib PUBLIC
 
 target_link_libraries(gui_lib PUBLIC
     Qt6::Widgets
+    ipc_lib
 )
